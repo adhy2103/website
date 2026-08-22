@@ -176,7 +176,7 @@ function updateSafariCalculator() {
 
   if (waBtn) {
     const textMsg = `Hi! I want to inquire about ${pkgName} for ${calcPaxCount} people on ${travelDate}`;
-    waBtn.href = `https://wa.me/917994356441?text=${encodeURIComponent(textMsg)}`;
+    waBtn.href = `https://wa.me/917558876257?text=${encodeURIComponent(textMsg)}`;
   }
 }
 
@@ -224,7 +224,7 @@ function submitBookingModal(event) {
   lines.push(``, `Please confirm availability and share pricing details. Thank you!`);
 
   const message = lines.join('\n');
-  const waUrl = `https://wa.me/917994356441?text=${encodeURIComponent(message)}`;
+  const waUrl = `https://wa.me/917558876257?text=${encodeURIComponent(message)}`;
 
   window.open(waUrl, '_blank');
   showToast('WhatsApp message prepared! Sending your inquiry...');
@@ -241,7 +241,7 @@ function submitQuickInquiry(event) {
   const msg = form.querySelector('#contactMsg')?.value || '';
 
   const message = `Hi Thekkady Trips!\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nService: ${service}${msg ? `\nNote: ${msg}` : ''}`;
-  const waUrl = `https://wa.me/917994356441?text=${encodeURIComponent(message)}`;
+  const waUrl = `https://wa.me/917558876257?text=${encodeURIComponent(message)}`;
 
   window.open(waUrl, '_blank');
   showToast('Opening WhatsApp... 🚀');
@@ -402,7 +402,7 @@ function changeDetailPax(delta, unitPrice, safariName) {
     const travelDate = (dateInput && dateInput.value) ? dateInput.value : 'Upcoming Date';
     const vehicleChoice = (jeepTypeSelect && jeepTypeSelect.value === 'open-top') ? 'Open-Top Mahindra 4x4' : 'Standard 4x4 Jeep';
     const msg = `Hi Thekkady Trips! I want to book the *${safariName}* for *${detailPaxCount} people* on *${travelDate}* (${vehicleChoice}). Total estimated: ₹${total.toLocaleString('en-IN')}. Please confirm availability!`;
-    waBtn.href = `https://wa.me/917994356441?text=${encodeURIComponent(msg)}`;
+    waBtn.href = `https://wa.me/917558876257?text=${encodeURIComponent(msg)}`;
   }
 }
 
