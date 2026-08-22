@@ -355,8 +355,11 @@ input, select, textarea { font-family: inherit; }
   display: flex;
   align-items: center;
   padding: 100px 0 60px;
-  overflow: hidden;
+  overflow-x: hidden;       /* prevent any child from bleeding off left/right */
+  overflow-y: visible;
   background: var(--bg-primary);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-bg {
@@ -408,9 +411,16 @@ input, select, textarea { font-family: inherit; }
   gap: 56px;
   align-items: center;
   width: 100%;
+  max-width: 100%;        /* never escape the container */
+  box-sizing: border-box;
 }
 
-.hero-content { max-width: 620px; }
+.hero-content {
+  max-width: 620px;
+  width: 100%;
+  min-width: 0;           /* critical: prevents grid cell from overflowing */
+  box-sizing: border-box;
+}
 
 .hero-brand-emblem {
   margin-bottom: 20px;
@@ -510,7 +520,9 @@ input, select, textarea { font-family: inherit; }
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
   padding: 16px 24px;
-  width: fit-content;
+  width: fit-content;       /* desktop: shrink to content */
+  max-width: 100%;          /* never wider than viewport */
+  box-sizing: border-box;
 }
 .stat-item {
   display: flex;
@@ -2325,18 +2337,103 @@ input, select, textarea { font-family: inherit; }
    ═══════════════════════════════════════════════════ */
 @media (max-width: 640px) {
   .section { padding: 64px 0; }
-  .container { padding: 0 16px; }
 
-  .hero { padding: 90px 0 120px; min-height: auto; }
-  .hero-title { font-size: 2.1rem; }
-  .hero-stats { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px; }
+  /* ── Bug 1 Fix: enforce padding & no-overflow on all containers ── */
+  .container {
+    padding: 0 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* ── Bug 1 Fix: hero layout ── */
+  .hero {
+    padding: 90px 0 32px;    /* trust badges now in-flow, no bottom clearance needed */
+    min-height: auto;
+    flex-direction: column;   /* stack hero-wrapper + trust-badges vertically */
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  /* ── Bug 1 Fix: hero text must respect container padding ── */
+  .hero-title {
+    font-size: 1.9rem;
+    word-break: break-word;   /* prevent long words from escaping left */
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .hero-sub {
+    font-size: 14.5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+  .live-ticker {
+    font-size: 11px;
+    max-width: 100%;
+    white-space: normal;       /* allow ticker text to wrap on very small screens */
+    flex-wrap: wrap;
+  }
+
+  /* ── Bug 2 Fix: stats box — switch to proper column stack, no overlap ── */
+  .hero-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    width: 100%;              /* full width, not fit-content — prevents overflow */
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;       /* ensure it's in normal document flow */
+    margin-top: 8px;
+  }
   .stat-divider { display: none; }
   .stat-item { padding: 0; }
+
+  /* ── Bug 2 Fix: trust badges — pull out of absolute position on mobile ── */
+  .hero-trust-badges {
+    position: static;          /* no longer absolute on mobile */
+    transform: none;
+    bottom: auto;
+    left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 0 16px 24px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 24px;
+    z-index: 4;
+  }
+  .trust-badge {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ── hero-wrapper single column ── */
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;                /* let container handle padding */
+  }
+  .hero-content {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* ── hero actions ── */
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; }
-  .hero-trust-badges { bottom: 64px; flex-direction: column; align-items: center; gap: 8px; }
-  .trust-badge { width: 100%; max-width: 320px; }
 
+  /* ── hero-scroll-hint: hide on mobile to avoid clutter ── */
+  .hero-scroll-hint { display: none; }
+
+  /* ── rest of mobile layout ── */
   .bento-grid { grid-template-columns: 1fr; }
   .bento-card--featured { flex-direction: column; }
   .bento-card--featured .bento-card__media { width: 100%; }
@@ -2364,3 +2461,4 @@ input, select, textarea { font-family: inherit; }
   .calc-card { padding: 24px; }
   .nav-cta { display: none; }
 }
+
