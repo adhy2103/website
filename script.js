@@ -485,10 +485,30 @@ function initSpatialTilt() {
 }
 
 // Initialize on DOM ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSpatialTilt);
-} else {
+function initApp() {
   initSpatialTilt();
+  
+  // Safe Image Error Handling & Fallback
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function() {
+      this.classList.add('img-error');
+      if (this.classList.contains('nav-logo-img') || this.classList.contains('hero-logo-img') || this.classList.contains('footer-logo-img') || this.classList.contains('modal-logo') || this.classList.contains('form-card-logo')) {
+        if (!this.src.endsWith('logo.png')) {
+          this.src = './assets/logo.png';
+        }
+      } else {
+        if (!this.src.endsWith('jeep_action.png') && !this.src.endsWith('hero_bg.png')) {
+          this.src = './assets/jeep_action.png';
+        }
+      }
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
 }
 
 console.log('%c Thekkady Trips — Spatial Bento Grid & 3D Glass UI Initialized!', 'color: #C59B42; font-size: 15px; font-weight: bold;');

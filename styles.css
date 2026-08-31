@@ -13,6 +13,19 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img.img-error {
+  background: linear-gradient(135deg, var(--surface-card) 0%, var(--surface-raised) 100%);
+  min-height: 120px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
 :root {
   /* ── Dark Backgrounds ── */
   --bg-primary:    #090e0b;
@@ -381,7 +394,7 @@ input, select, textarea { font-family: inherit; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('assets/gavi_waterfall.png');
+  background-image: url('./assets/hero_bg.png'), url('./assets/gavi_waterfall.png');
   background-size: cover;
   background-position: center 30%;
   will-change: transform;
