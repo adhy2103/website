@@ -394,9 +394,9 @@ input, select, textarea { font-family: inherit; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('./assets/hero_bg.png'), url('./assets/gavi_waterfall.png');
+  background-image: url('./assets/hero_bg.jpg'), url('./assets/hero_bg.png');
   background-size: cover;
-  background-position: center 30%;
+  background-position: center center;
   will-change: transform;
   transition: transform 0.1s linear;
 }
