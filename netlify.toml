@@ -1,4 +1,4 @@
-﻿[build]
+[build]
   publish = "."
 
 [[headers]]
@@ -29,8 +29,10 @@
   from = "/safari-kerala"
   to = "/safari-thekkady-tamilnadu.html"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/safari-tamilnadu"
   to = "/safari-thekkady-tamilnadu.html"
   status = 301
+  force = true
