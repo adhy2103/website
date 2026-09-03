@@ -120,7 +120,8 @@
 
 <!-- ═══════════════HERO SECTION ═══════════════-->
 <section class="hero" id="hero">
-  <div class="hero-bg"></div>
+  <!-- Animated Jeep Canvas Background -->
+  <canvas id="jeepCanvas" class="hero-canvas-bg" aria-hidden="true"></canvas>
   <div class="hero-overlay"></div>
   <div class="hero-particles" id="particles"></div>
 
@@ -133,7 +134,7 @@
 
       <div class="live-ticker animate-fade-up">
         <span class="ticker-dot"></span>
-        <span>14 Safaris Booked Today • Certified Idukki 4x4 Drivers Ready</span>
+        <span>14 Safaris Booked Today &bull; Certified Idukki 4x4 Drivers Ready</span>
       </div>
 
       <h1 class="hero-title animate-fade-up delay-1">
@@ -141,7 +142,7 @@
       </h1>
 
       <p class="hero-sub animate-fade-up delay-2">
-        Based in Kumily, Idukki — We specialize in 4x4 Jeep Safaris across Gavi, Sathram, Vagamon, Ramakkalmedu & Anchuruli.<br/>
+        Based in Kumily, Idukki &mdash; We specialize in 4x4 Jeep Safaris across Gavi, Sathram, Vagamon, Ramakkalmedu &amp; Anchuruli.<br/>
         Official forest entry permit assistance, room stays, bike rentals, and custom Kerala tours.
       </p>
 
@@ -152,7 +153,7 @@
         </span>
         <span class="pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          Gavi & Sathram
+          Gavi &amp; Sathram
         </span>
         <span class="pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -1476,6 +1477,396 @@
 <div class="toast" id="toast"><span class="toast-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><span class="toast-msg" id="toastMsg"></span></div>
 
 <script src="./script.js" defer></script>
+
+<!-- ═══════════════ ANIMATED JEEP HERO CANVAS ═══════════════ -->
+<script>
+(function() {
+  var canvas = document.getElementById('jeepCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+
+  /* ── resize ── */
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', function(){ resize(); buildTrees(); });
+
+  var W, H;
+
+  /* ── TIME & SPEED ── */
+  var t = 0;
+  var speed = 2.2;          // pixels per frame the scene scrolls
+
+  /* ── COLOURS ── */
+  var SKY_TOP    = '#0a0703';
+  var SKY_HOR    = '#5c2d0a';
+  var SUN_INNER  = '#ff9f1c';
+  var SUN_OUTER  = '#ff6a00';
+  var DUST_COL   = 'rgba(180,100,20,';
+  var GROUND_TOP = '#5a3210';
+  var GROUND_BOT = '#2a1505';
+  var TRACK_COL  = '#3d1f08';
+
+  /* ── STARS ── */
+  var stars = [];
+  for (var i = 0; i < 120; i++) {
+    stars.push({ x: Math.random(), y: Math.random() * 0.55, r: Math.random() * 1.2 + 0.2, a: Math.random() });
+  }
+
+  /* ── TREES (silhouette layers) ── */
+  var treeLayerA = [];  // far trees  – smaller, slower
+  var treeLayerB = [];  // near trees – taller, faster
+  var treeSW = 0;
+
+  function makeTree(x, layer) {
+    var tall = layer === 'b';
+    var h = tall ? (H * 0.22 + Math.random() * H * 0.12) : (H * 0.10 + Math.random() * H * 0.08);
+    var w = h * (0.35 + Math.random() * 0.25);
+    return { x: x, h: h, w: w };
+  }
+
+  function buildTrees() {
+    W = canvas.width; H = canvas.height;
+    treeLayerA = []; treeLayerB = [];
+    for (var x = -200; x < W + 400; x += 55 + Math.random() * 60)
+      treeLayerA.push(makeTree(x, 'a'));
+    for (var x2 = -200; x2 < W + 400; x2 += 80 + Math.random() * 90)
+      treeLayerB.push(makeTree(x2, 'b'));
+    treeSW = W + 600;
+  }
+  buildTrees();
+
+  function scrollTrees(arr, spd, layer) {
+    for (var i = 0; i < arr.length; i++) {
+      arr[i].x -= spd;
+    }
+    // recycle off-screen
+    while (arr.length && arr[0].x < -300) {
+      arr.shift();
+      var newX = (arr.length ? arr[arr.length-1].x : W) + 55 + Math.random() * (layer==='a'?60:90);
+      arr.push(makeTree(newX, layer));
+    }
+  }
+
+  /* draw a simple silhouette jungle-tree (triangle stack / palm) */
+  function drawTree(tree, baseY, col) {
+    ctx.fillStyle = col;
+    var x = tree.x, h = tree.h, w = tree.w;
+    /* trunk */
+    ctx.fillRect(x - w*0.08, baseY - h*0.3, w*0.16, h*0.35);
+    /* three stacked triangles for canopy */
+    var tiers = 3;
+    for (var k = 0; k < tiers; k++) {
+      var frac = 1 - k/tiers;
+      ctx.beginPath();
+      ctx.moveTo(x,            baseY - h*0.25 - (h * 0.75) * frac);
+      ctx.lineTo(x - w*(0.5 + k*0.08), baseY - h*0.25 - (h * 0.75) * (frac - 0.3));
+      ctx.lineTo(x + w*(0.5 + k*0.08), baseY - h*0.25 - (h * 0.75) * (frac - 0.3));
+      ctx.closePath();
+      ctx.fill();
+    }
+  }
+
+  /* ── DUST PARTICLES ── */
+  var dustParts = [];
+  function spawnDust() {
+    var dCount = 6;
+    for (var i = 0; i < dCount; i++) {
+      dustParts.push({
+        x: W * 0.42 + Math.random() * 30,
+        y: H * 0.68 + Math.random() * 20,
+        vx: -(0.5 + Math.random() * 2.5),
+        vy: -(0.3 + Math.random() * 1.2),
+        r: 4 + Math.random() * 18,
+        a: 0.18 + Math.random() * 0.18,
+        life: 0,
+        maxLife: 60 + Math.random() * 80,
+        spread: 0.8 + Math.random() * 1.6
+      });
+    }
+  }
+
+  /* ── JEEP (SVG-like path drawn on canvas) ── */
+  function drawJeep(cx, cy, scale) {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.scale(scale, scale);
+
+    var s = 1;
+    /* body shadow */
+    ctx.globalAlpha = 0.4;
+    ctx.fillStyle = '#000';
+    ctx.beginPath();
+    ctx.ellipse(0, 42*s, 90*s, 14*s, 0, 0, Math.PI*2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+
+    /* chassis / body */
+    ctx.fillStyle = '#1a1008';
+    ctx.beginPath();
+    ctx.moveTo(-90*s, 30*s);
+    ctx.lineTo(-95*s, 0*s);
+    ctx.lineTo(-60*s, -30*s);
+    ctx.lineTo(-20*s, -44*s);
+    ctx.lineTo( 50*s, -44*s);
+    ctx.lineTo( 80*s, -20*s);
+    ctx.lineTo( 95*s, 10*s);
+    ctx.lineTo( 90*s, 30*s);
+    ctx.closePath();
+    ctx.fill();
+
+    /* roof */
+    ctx.fillStyle = '#0f0905';
+    ctx.beginPath();
+    ctx.moveTo(-58*s, -30*s);
+    ctx.lineTo(-22*s, -66*s);
+    ctx.lineTo( 42*s, -66*s);
+    ctx.lineTo( 78*s, -30*s);
+    ctx.closePath();
+    ctx.fill();
+
+    /* windshield */
+    ctx.fillStyle = 'rgba(60,120,80,0.35)';
+    ctx.beginPath();
+    ctx.moveTo(-50*s, -32*s);
+    ctx.lineTo(-20*s, -62*s);
+    ctx.lineTo( 22*s, -62*s);
+    ctx.lineTo( 48*s, -32*s);
+    ctx.closePath();
+    ctx.fill();
+
+    /* door windows */
+    ctx.fillStyle = 'rgba(60,120,80,0.25)';
+    ctx.beginPath();
+    ctx.rect(-80*s, -28*s, 18*s, 26*s);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.rect( 54*s, -26*s, 18*s, 24*s);
+    ctx.fill();
+
+    /* grill lines */
+    ctx.strokeStyle = '#2a1008';
+    ctx.lineWidth = 2.5*s;
+    for (var g = -6; g <= 6; g += 4) {
+      ctx.beginPath();
+      ctx.moveTo(-95*s, g*s);
+      ctx.lineTo(-78*s, g*s);
+      ctx.stroke();
+    }
+
+    /* headlight glow */
+    ctx.fillStyle = 'rgba(255,220,80,0.7)';
+    ctx.beginPath();
+    ctx.ellipse(-96*s, 4*s, 6*s, 4*s, 0, 0, Math.PI*2);
+    ctx.fill();
+    /* headlight beam */
+    ctx.save();
+    ctx.globalAlpha = 0.08;
+    ctx.fillStyle = '#ffd040';
+    ctx.beginPath();
+    ctx.moveTo(-96*s, 4*s);
+    ctx.lineTo(-200*s, -20*s);
+    ctx.lineTo(-200*s, 28*s);
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+
+    /* exhaust smoke */
+    for (var sm = 0; sm < 3; sm++) {
+      ctx.globalAlpha = 0.12 - sm * 0.03;
+      ctx.fillStyle = '#888';
+      ctx.beginPath();
+      var smX = 94*s + sm * 12*s;
+      var smY = 18*s - sm * 4*s;
+      ctx.arc(smX, smY, (4 + sm*3)*s, 0, Math.PI*2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    /* wheels */
+    function drawWheel(wx, wy) {
+      /* tire */
+      ctx.fillStyle = '#111';
+      ctx.beginPath();
+      ctx.arc(wx, wy, 22*s, 0, Math.PI*2);
+      ctx.fill();
+      /* tread pattern */
+      ctx.strokeStyle = '#333';
+      ctx.lineWidth = 3*s;
+      var rot = (t * speed * 0.04) % (Math.PI * 2);
+      for (var td = 0; td < 8; td++) {
+        ctx.save();
+        ctx.translate(wx, wy);
+        ctx.rotate(rot + td * Math.PI/4);
+        ctx.beginPath();
+        ctx.moveTo(0, 13*s);
+        ctx.lineTo(0, 20*s);
+        ctx.stroke();
+        ctx.restore();
+      }
+      /* rim */
+      ctx.fillStyle = '#3a2a10';
+      ctx.beginPath();
+      ctx.arc(wx, wy, 11*s, 0, Math.PI*2);
+      ctx.fill();
+      ctx.fillStyle = '#5a4a20';
+      ctx.beginPath();
+      ctx.arc(wx, wy, 5*s, 0, Math.PI*2);
+      ctx.fill();
+    }
+
+    drawWheel(-58*s, 36*s);
+    drawWheel( 62*s, 36*s);
+
+    /* spare wheel on back */
+    ctx.fillStyle = '#111';
+    ctx.beginPath();
+    ctx.arc(94*s, -10*s, 14*s, 0, Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle = '#2a2010';
+    ctx.beginPath();
+    ctx.arc(94*s, -10*s, 7*s, 0, Math.PI*2);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  /* ── GROUND ROCKS ── */
+  var rocks = [];
+  for (var r = 0; r < 18; r++) {
+    rocks.push({ x: Math.random() * 1800, y: 0.72 + Math.random() * 0.1, r: 2 + Math.random() * 7 });
+  }
+
+  /* ── MAIN DRAW LOOP ── */
+  function draw() {
+    W = canvas.width; H = canvas.height;
+    if (!W || !H) { requestAnimationFrame(draw); return; }
+
+    /* 1 — SKY gradient */
+    var skyGrad = ctx.createLinearGradient(0, 0, 0, H * 0.68);
+    skyGrad.addColorStop(0,   SKY_TOP);
+    skyGrad.addColorStop(0.6, '#1a0b02');
+    skyGrad.addColorStop(1,   SKY_HOR);
+    ctx.fillStyle = skyGrad;
+    ctx.fillRect(0, 0, W, H * 0.68);
+
+    /* 2 — STARS (twinkle) */
+    stars.forEach(function(s) {
+      var alpha = 0.3 + 0.5 * Math.abs(Math.sin(t * 0.02 + s.a * 10));
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = '#fff';
+      ctx.beginPath();
+      ctx.arc(s.x * W, s.y * H, s.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+
+    /* 3 — SUN / full moon glow on horizon */
+    var sunX = W * 0.72, sunY = H * 0.56;
+    var sunGrad = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, 110);
+    sunGrad.addColorStop(0,   'rgba(255,160,10,0.9)');
+    sunGrad.addColorStop(0.25,'rgba(255,80,0,0.55)');
+    sunGrad.addColorStop(1,   'rgba(255,50,0,0)');
+    ctx.fillStyle = sunGrad;
+    ctx.beginPath();
+    ctx.arc(sunX, sunY, 110, 0, Math.PI * 2);
+    ctx.fill();
+    /* sun disc */
+    ctx.fillStyle = SUN_INNER;
+    ctx.beginPath();
+    ctx.arc(sunX, sunY, 32, 0, Math.PI * 2);
+    ctx.fill();
+
+    /* 4 — FAR tree layer */
+    var farBase = H * 0.68;
+    scrollTrees(treeLayerA, speed * 0.4, 'a');
+    treeLayerA.forEach(function(tr) {
+      drawTree(tr, farBase, 'rgba(10,5,2,0.7)');
+    });
+
+    /* 5 — GROUND */
+    var gGrad = ctx.createLinearGradient(0, H * 0.65, 0, H);
+    gGrad.addColorStop(0, GROUND_TOP);
+    gGrad.addColorStop(1, GROUND_BOT);
+    ctx.fillStyle = gGrad;
+    ctx.fillRect(0, H * 0.65, W, H * 0.35);
+
+    /* track ruts */
+    ctx.strokeStyle = TRACK_COL;
+    ctx.lineWidth = 5;
+    ctx.setLineDash([18, 14]);
+    ctx.beginPath();
+    ctx.moveTo(0, H * 0.75);
+    ctx.lineTo(W, H * 0.75);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(0, H * 0.80);
+    ctx.lineTo(W, H * 0.80);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    /* rocks */
+    rocks.forEach(function(rock) {
+      rock.x -= speed * 1.1;
+      if (rock.x < -20) rock.x = W + Math.random() * 200;
+      ctx.fillStyle = 'rgba(40,20,5,0.9)';
+      ctx.beginPath();
+      ctx.ellipse(rock.x, rock.y * H, rock.r * 1.6, rock.r * 0.7, 0.3, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    /* 6 — NEAR tree layer */
+    scrollTrees(treeLayerB, speed * 0.85, 'b');
+    treeLayerB.forEach(function(tr) {
+      drawTree(tr, farBase, 'rgba(5,2,0,0.9)');
+    });
+
+    /* 7 — DUST particles behind jeep */
+    if (t % 3 === 0) spawnDust();
+    dustParts.forEach(function(p) {
+      p.x += p.vx;
+      p.y += p.vy * 0.5;
+      p.r += p.spread;
+      p.a *= 0.97;
+      p.life++;
+      var fade = 1 - p.life / p.maxLife;
+      ctx.globalAlpha = p.a * fade;
+      var dGrad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+      dGrad.addColorStop(0, 'rgba(180,100,20,0.5)');
+      dGrad.addColorStop(1, 'rgba(140,60,5,0)');
+      ctx.fillStyle = dGrad;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    dustParts = dustParts.filter(function(p) { return p.life < p.maxLife; });
+
+    /* 8 — JEEP — slight bounce on uneven terrain */
+    var jeepBounce = Math.sin(t * 0.18) * 2.5 + Math.sin(t * 0.31) * 1.5;
+    var jeepScale = Math.min(W, H) / 700;
+    jeepScale = Math.max(0.55, Math.min(1.1, jeepScale));
+    drawJeep(W * 0.44, H * 0.70 + jeepBounce, jeepScale);
+
+    /* 9 — GROUND dust streak under wheels */
+    var dustY = H * 0.73;
+    var trailGrad = ctx.createLinearGradient(W * 0.25, 0, W * 0.44, 0);
+    trailGrad.addColorStop(0, 'rgba(160,80,10,0)');
+    trailGrad.addColorStop(1, 'rgba(160,80,10,0.18)');
+    ctx.fillStyle = trailGrad;
+    ctx.beginPath();
+    ctx.ellipse(W * 0.34, dustY, W * 0.10, 12, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    t++;
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
+</script>
 </body>
 </html>
 
