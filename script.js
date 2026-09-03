@@ -69,17 +69,9 @@ if (hamburger && navLinks) {
   });
 }
 
-/* ─── HERO BG PARALLAX & PARTICLES ───────────────── */
-const heroBg = document.querySelector('.hero-bg');
-if (heroBg) {
-  heroBg.classList.add('loaded');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY < window.innerHeight) {
-      heroBg.style.transform = `scale(1) translateY(${scrollY * 0.2}px)`;
-    }
-  }, { passive: true });
-}
+
+/* ─── HERO CANVAS BG is animated independently via requestAnimationFrame ─── */
+
 
 const particleContainer = document.getElementById('particles');
 if (particleContainer) {

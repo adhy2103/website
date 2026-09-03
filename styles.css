@@ -391,14 +391,14 @@ input, select, textarea { font-family: inherit; }
   box-sizing: border-box;
 }
 
-.hero-bg {
+/* Animated jeep canvas replaces the static hero-bg photo */
+.hero-canvas-bg {
   position: absolute;
   inset: 0;
-  background-image: url('./assets/hero_bg.jpg'), url('./assets/hero_bg.png');
-  background-size: cover;
-  background-position: center center;
+  width: 100%;
+  height: 100%;
+  display: block;
   will-change: transform;
-  transition: transform 0.1s linear;
 }
 
 /* Heavy dark gradient — text always pops */
