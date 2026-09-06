@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="icon" type="image/png" href="./assets/logo.png" />
@@ -120,10 +120,11 @@
 
 <!-- ═══════════════HERO SECTION ═══════════════-->
 <section class="hero" id="hero">
-  <!-- Animated Jeep Canvas Background -->
-  <canvas id="jeepCanvas" class="hero-canvas-bg" aria-hidden="true"></canvas>
+  <!-- Full-width responsive hero image -->
+  <img src="./assets/hero_sunset.jpg" alt="Thekkady Jeep Safari" class="w-full h-full object-cover hero-bg-img" />
+
+  <!-- Dark gradient overlay for text readability -->
   <div class="hero-overlay"></div>
-  <div class="hero-particles" id="particles"></div>
 
   <div class="container hero-wrapper">
     <!-- Left Hero Column -->
@@ -195,7 +196,7 @@
     <!-- Right Hero Column (Visual Frame & Quick Inquiry Form) -->
     <div class="hero-visual-col animate-slide-left delay-2">
       <div class="hero-image-frame">
-        <img src="./assets/jeep_action.png" alt="Real 4x4 Jeep Safari in Idukki Jungle" class="hero-frame-img" />
+        <img src="./assets/sathram_pilot_jeep.jpg" alt="Real 4x4 Jeep Safari in Idukki Jungle" class="hero-frame-img w-full h-full object-cover" />
         <div class="frame-overlay-badge">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <span>Real Off-Road Action • Kumily Base</span>
@@ -227,6 +228,8 @@
           <div class="form-group">
             <label for="heroService">Choose Experience</label>
             <select id="heroService" required>
+              <option value="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹4,500/Jeep)</option>
+              <option value="Kerala & Tamil Nadu Sightseeing Jeep Tour">Kerala & Tamil Nadu Sightseeing (₹4,000/Jeep)</option>
               <option value="Gavi Deep Jungle Safari">Gavi Deep Jungle Safari</option>
               <option value="Parumpara & Angamuzhi 4x4 Circuit">Parumpara & Angamuzhi 4x4 Circuit</option>
               <option value="Sathram & Border Trekking">Sathram & Border Trekking</option>
@@ -344,7 +347,6 @@
       <h2 class="section-title">Idukki <span class="accent">Jeep Safari Circuits</span></h2>
       <p class="section-sub">We are Idukki locals — taking you deep into secret forest trails, mountain cliffs, waterfalls &amp; wildlife reserves in rugged 4x4 jeeps</p>
     </div>
-
     <!-- ── Bento Grid ── -->
     <div class="bento-grid" id="bentoGrid">
 
@@ -355,7 +357,7 @@
         <!-- Image section with overlay badges -->
         <div class="bento-card__media">
           <a href="safari-gavi.html" tabindex="-1" aria-hidden="true">
-            <img src="./assets/gavi_waterfall.png" alt="Gavi Eco-Tourism Safari — Wild Elephant Herd in Periyar Tiger Reserve" class="bento-card__img" loading="lazy" />
+            <img src="./assets/gavi_welcome_gate.jpg" alt="Welcome to Gavi Eco-Tourism Safari Gate and 4x4 Jeep" class="bento-card__img w-full h-full object-cover" loading="lazy" />
           </a>
           <!-- Floating highlight tag -->
           <div class="bento-floating-tag bento-floating-tag--gold">
@@ -414,7 +416,7 @@
       <article class="bento-card glass-card eco-card" data-tilt aria-label="Sathram Highland Safari">
         <div class="bento-card__media bento-card__media--sm">
           <a href="safari-sathram.html" tabindex="-1" aria-hidden="true">
-            <img src="./assets/tea_plantation.png" alt="Sathram Border Ridge Tea Estates" class="bento-card__img" loading="lazy" />
+            <img src="./assets/sathram_jeep_fleet.jpg" alt="Official Thekkady Trips 4x4 Jeep Fleet in Sathram" class="bento-card__img w-full h-full object-cover" loading="lazy" />
           </a>
           <div class="bento-floating-tag bento-floating-tag--teal">Scenic High Altitude</div>
           <div class="bento-badge-group">
@@ -458,7 +460,7 @@
       <article class="bento-card glass-card" data-tilt aria-label="Parunthumpara Eagle Rock Tour">
         <div class="bento-card__media bento-card__media--sm">
           <a href="safari-parunthumpara.html" tabindex="-1" aria-hidden="true">
-            <img src="./assets/wildlife.png" alt="Parunthumpara Eagle Rock Sunset" class="bento-card__img" loading="lazy" />
+            <img src="./assets/parunthumpara_main.jpg" alt="Parunthumpara Eagle Rock Sunset" class="bento-card__img w-full h-full object-cover" loading="lazy" />
           </a>
           <div class="bento-floating-tag bento-floating-tag--amber">Sunset Eagle Cliff</div>
           <div class="bento-badge-group">
@@ -502,7 +504,7 @@
       <article class="bento-card glass-card trail-card" data-tilt aria-label="Angamoozhy 4x4 Off-Road Circuit">
         <div class="bento-card__media bento-card__media--sm">
           <a href="safari-angamoozhy.html" tabindex="-1" aria-hidden="true">
-            <img src="./assets/jeep_action.png" alt="Angamoozhy 4x4 Off-Road Trail" class="bento-card__img" loading="lazy" />
+            <img src="./assets/angamoozhy_panoramic_reservoir.jpg" alt="Angamoozhy Reservoir & 4x4 Off-Road Trail" class="bento-card__img w-full h-full object-cover" loading="lazy" />
           </a>
           <div class="bento-floating-tag bento-floating-tag--red">4x4 Extreme</div>
           <div class="bento-badge-group">
@@ -546,7 +548,7 @@
       <article class="bento-card glass-card" data-tilt aria-label="Kerala Tamil Nadu Sightseeing Tour">
         <div class="bento-card__media bento-card__media--sm">
           <a href="safari-thekkady-tamilnadu.html" tabindex="-1" aria-hidden="true">
-            <img src="./assets/honeymoon.png" alt="Kerala Tamil Nadu Sightseeing Jeep Tour" class="bento-card__img" loading="lazy" />
+            <img src="./assets/kerala_tn_grape_farm.jpg" alt="Kerala Tamil Nadu Sightseeing Tour - Grape Farms & Viewpoints" class="bento-card__img w-full h-full object-cover" loading="lazy" />
           </a>
           <div class="bento-floating-tag bento-floating-tag--teal">2-in-1 Premium</div>
           <div class="bento-badge-group">
@@ -578,6 +580,54 @@
             <div class="bento-card__actions">
               <a href="safari-thekkady-tamilnadu.html" class="btn btn-accent bento-cta-detail">Details →</a>
               <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips%2C%20I%20would%20like%20to%20book%20the%20Kerala%20%26%20Tamil%20Nadu%20Sightseeing%20Jeep%20Tour%20(Rs%204000)" target="_blank" rel="noopener" class="btn btn-whatsapp bento-cta-wa" aria-label="Book Thekkady TN Tour on WhatsApp">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <span>Book</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── CARD 6: IDUKKI DAM FULL DAY PACKAGE ── -->
+      <article class="bento-card glass-card" data-tilt aria-label="Idukki Dam Full Day Package">
+        <div class="bento-card__media bento-card__media--sm">
+          <a href="safari-idukki-dam.html" tabindex="-1" aria-hidden="true">
+            <img src="./assets/idukki_arch_dam.jpg" alt="Idukki Dam Full Day Package" class="bento-card__img w-full h-full object-cover" loading="lazy" />
+          </a>
+          <div class="bento-floating-tag bento-floating-tag--gold">Full Day Circuit</div>
+          <div class="bento-badge-group">
+            <span class="bento-meta-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              8–9 Hours
+            </span>
+            <span class="bento-meta-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Max 6 Guests
+            </span>
+          </div>
+        </div>
+        <div class="bento-card__body">
+          <div class="bento-card__tag">6 Grand Spots • Arch Dam • Boating</div>
+          <h3 class="bento-card__title"><a href="safari-idukki-dam.html">Idukki Dam Full Day Package</a></h3>
+          <p class="bento-card__desc">Calvary Mount, Anchuruli water tunnel, Ayyappankovil hanging bridge, Idukki dam top walk, reservoir boating &amp; Hill View park.</p>
+          <ul class="bento-bullet-list">
+            <li>
+              <span class="bento-bullet-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Calvary Mount 360° views &amp; Anchuruli water tunnel</span>
+            </li>
+            <li>
+              <span class="bento-bullet-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Asia's largest Arch Dam walk &amp; Reservoir boating safari</span>
+            </li>
+          </ul>
+          <div class="bento-card__footer">
+            <div class="bento-price">
+              <span class="bento-price__label">Private Jeep Tariff</span>
+              <span class="bento-price__val">₹4,500 <small>/ jeep (max 6)</small></span>
+            </div>
+            <div class="bento-card__actions">
+              <a href="safari-idukki-dam.html" class="btn btn-accent bento-cta-detail">Details →</a>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips%2C%20I%20would%20like%20to%20book%20the%20Idukki%20Dam%20Full%20Day%20Package%20(Rs%204500)" target="_blank" rel="noopener" class="btn btn-whatsapp bento-cta-wa" aria-label="Book Idukki Dam Full Day Package on WhatsApp">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 <span>Book</span>
               </a>
@@ -586,12 +636,12 @@
         </div>
       </article>
 
-      <!-- ── CARD 6: CUSTOM FULL DAY — Wide accent card ── -->
+      <!-- ── CARD 7: CUSTOM FULL DAY — Wide accent card ── -->
       <article class="bento-card bento-card--custom glass-card trail-card" data-tilt aria-label="Custom Full Day Safari Circuit">
         <!-- Custom card uses a horizontal layout on desktop -->
         <div class="bento-card__media bento-card__media--sm">
           <a href="safari-custom.html" tabindex="-1" aria-hidden="true">
-            <img src="./assets/jeep_action.png" alt="Custom Private 4x4 Jeep Safari" class="bento-card__img" loading="lazy" />
+            <img src="./assets/sathram_jeep_offroad.jpg" alt="Custom Private 4x4 Jeep Safari" class="bento-card__img w-full h-full object-cover" loading="lazy" />
           </a>
           <div class="bento-floating-tag bento-floating-tag--gold">100% Tailored</div>
           <div class="bento-badge-group">
@@ -653,11 +703,13 @@
         <div class="calc-field-group">
           <label for="calcPackage">1. Select Safari Circuit</label>
           <select id="calcPackage" onchange="updateSafariCalculator()">
-            <option value="gavi" data-price="2500" data-name="Gavi Deep Jungle Safari">Gavi Deep Jungle Safari (₹2,500/pax)</option>
-            <option value="parumpara" data-price="2000" data-name="Parumpara & Angamuzhi 4x4 Circuit">Parumpara & Angamuzhi 4x4 Circuit (₹2,000/pax)</option>
-            <option value="sathram" data-price="1500" data-name="Sathram & Border Trekking">Sathram & Border Trekking (₹1,500/pax)</option>
-            <option value="ramakkalmedu" data-price="2200" data-name="Ramakkalmedu & Vagamon Off-Road">Ramakkalmedu & Vagamon Off-Road (₹2,200/pax)</option>
-            <option value="night" data-price="3000" data-name="Jungle Night / Sunrise Safari">Jungle Night / Sunrise Safari (₹3,000/pax)</option>
+            <option value="idukki" data-price="4500" data-rate-type="fixed" data-name="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹4,500/jeep)</option>
+            <option value="thekkady-tn" data-price="4000" data-rate-type="fixed" data-name="Kerala &amp; Tamil Nadu Tour">Kerala &amp; Tamil Nadu Tour (₹4,000/jeep)</option>
+            <option value="gavi" data-price="2500" data-rate-type="pax" data-name="Gavi Deep Jungle Safari">Gavi Deep Jungle Safari (₹2,500/pax)</option>
+            <option value="parumpara" data-price="2000" data-rate-type="pax" data-name="Parumpara & Angamuzhi 4x4 Circuit">Parumpara & Angamuzhi 4x4 Circuit (₹2,000/pax)</option>
+            <option value="sathram" data-price="1500" data-rate-type="pax" data-name="Sathram & Border Trekking">Sathram & Border Trekking (₹1,500/pax)</option>
+            <option value="ramakkalmedu" data-price="2200" data-rate-type="pax" data-name="Ramakkalmedu & Vagamon Off-Road">Ramakkalmedu & Vagamon Off-Road (₹2,200/pax)</option>
+            <option value="night" data-price="3000" data-rate-type="pax" data-name="Jungle Night / Sunrise Safari">Jungle Night / Sunrise Safari (₹3,000/pax)</option>
           </select>
         </div>
 
@@ -706,29 +758,29 @@
 
     <div class="gallery-grid">
       <div class="gallery-item reveal">
-        <img src="./assets/jeep_action.png" alt="4x4 Off-Road Jeep Splashing Through Stream" class="gallery-img" loading="lazy" />
+        <img src="./assets/sathram_jeep_offroad.jpg" alt="4x4 Off-Road Jeep on Sathram Mountain Trail" class="gallery-img w-full h-full object-cover" loading="lazy" />
         <div class="gallery-caption">
           <span class="gallery-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            Stream Crossing
+            Off-Road Action
           </span>
-          <h4>Parumpara Off-Road Trail</h4>
+          <h4>Sathram 4x4 Mountain Trail</h4>
         </div>
       </div>
 
       <div class="gallery-item reveal">
-        <img src="./assets/gavi_waterfall.png" alt="Gavi Wildlife Safari — Elephants in Periyar Reserve" class="gallery-img" loading="lazy" />
+        <img src="./assets/kerala_tn_suruli_waterfalls.jpg" alt="Cascading Cliff Waterfall in the Foothills" class="gallery-img w-full h-full object-cover" loading="lazy" />
         <div class="gallery-caption">
           <span class="gallery-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            Gavi Sanctuary
+            Natural Cascade
           </span>
-          <h4>Hidden Forest Waterfall</h4>
+          <h4>Hidden Cliff Waterfall</h4>
         </div>
       </div>
 
       <div class="gallery-item reveal">
-        <img src="./assets/tea_plantation.png" alt="Sunrise Over Munnar Tea Estates" class="gallery-img" loading="lazy" />
+        <img src="./assets/sathram_friends_safari.jpg" alt="4x4 Safari Group on Sathram Border Ridge" class="gallery-img w-full h-full object-cover" loading="lazy" />
         <div class="gallery-caption">
           <span class="gallery-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
@@ -739,7 +791,7 @@
       </div>
 
       <div class="gallery-item reveal">
-        <img src="./assets/wildlife.png" alt="Asian Elephant in Periyar Jungle" class="gallery-img" loading="lazy" />
+        <img src="./assets/gavi_wild_elephant.jpg" alt="Asian Elephant in Gavi Periyar Jungle" class="gallery-img w-full h-full object-cover" loading="lazy" />
         <div class="gallery-caption">
           <span class="gallery-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
@@ -750,24 +802,24 @@
       </div>
 
       <div class="gallery-item reveal">
-        <img src="./assets/honeymoon.png" alt="Romantic Sunset Backwaters Setup" class="gallery-img" loading="lazy" />
+        <img src="./assets/kerala_tn_grape_farm.jpg" alt="Cumbum Valley Grape Farm Tour" class="gallery-img w-full h-full object-cover" loading="lazy" />
         <div class="gallery-caption">
           <span class="gallery-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            Honeymoon Special
+            Vineyard Tour
           </span>
-          <h4>Sunset Backwater Cruise</h4>
+          <h4>Cumbum Grape Plantations</h4>
         </div>
       </div>
 
       <div class="gallery-item reveal">
-        <img src="./assets/tea_plantation.png" alt="Misty Mountains Aerial View Idukki" class="gallery-img" loading="lazy" />
+        <img src="./assets/parunthumpara_main.jpg" alt="Golden Hour Sunset at Parunthumpara Eagle Rock" class="gallery-img w-full h-full object-cover" loading="lazy" />
         <div class="gallery-caption">
           <span class="gallery-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
             Golden Hour
           </span>
-          <h4>Idukki Canopy Horizon</h4>
+          <h4>Parunthumpara Sunset Cliff</h4>
         </div>
       </div>
     </div>
@@ -787,7 +839,7 @@
       <!-- Honeymoon -->
       <div class="special-card reveal special-card--honey" id="pkg-honeymoon">
         <div class="special-card-img">
-          <img src="./assets/honeymoon.png" alt="Romantic Honeymoon Package Kerala" loading="lazy" />
+          <img src="./assets/kerala_tn_ottakathamedu_sunrise.jpg" alt="Romantic Honeymoon Package Kerala" class="w-full h-full object-cover" loading="lazy" />
           <div class="special-card-overlay">
             <div class="special-card-badge">Most Romantic</div>
           </div>
@@ -798,7 +850,7 @@
             <span class="special-duration">3N / 4D</span>
           </div>
           <h3>Romantic Kerala Honeymoon</h3>
-          <p>Jungle safaris by day, candlelit dinners by night, private forest cottage stays, and exclusive Alleppey houseboat moments.</p>
+          <p>Jungle safaris by day, candlelit dinners by night, private forest cottage stays, and exclusive sunrise viewpoints.</p>
           <div class="special-highlights">
             <div class="sh-item"><span class="sh-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span> Gavi Jungle Safari</div>
             <div class="sh-item"><span class="sh-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span> Private Houseboat Cruise</div>
@@ -818,7 +870,7 @@
       <!-- Family Package -->
       <div class="special-card reveal" id="pkg-family">
         <div class="special-card-img">
-          <img src="./assets/tea_plantation.png" alt="Kerala Family Holiday Package" loading="lazy" />
+          <img src="./assets/kerala_tn_bullock_cart_farm.jpg" alt="Kerala Family Holiday Package" class="w-full h-full object-cover" loading="lazy" />
           <div class="special-card-overlay">
             <div class="special-card-badge">Family Choice</div>
           </div>
@@ -829,7 +881,7 @@
             <span class="special-duration">4N / 5D</span>
           </div>
           <h3>Kerala Family Holiday</h3>
-          <p>A safe, comfortable family getaway across Kerala highlights — Periyar safari, Kovalam beach, elephant feeding, and Kathakali show.</p>
+          <p>A safe, comfortable family getaway across Kerala highlights — Periyar safari, farm village tours, elephant feeding, and Kathakali show.</p>
           <div class="special-highlights">
             <div class="sh-item"><span class="sh-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span> Elephant Feeding Session</div>
             <div class="sh-item"><span class="sh-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span> Safe 4x4 Jeep Safari</div>
@@ -849,7 +901,7 @@
       <!-- Adventure Combo -->
       <div class="special-card reveal" id="pkg-adventure">
         <div class="special-card-img">
-          <img src="./assets/jeep_action.png" alt="Ultimate Kerala Adventure Combo" loading="lazy" />
+          <img src="./assets/sathram_jeep_group.jpg" alt="Ultimate Kerala Adventure Combo" class="w-full h-full object-cover" loading="lazy" />
           <div class="special-card-overlay">
             <div class="special-card-badge">Adrenaline</div>
           </div>
@@ -893,7 +945,7 @@
     <div class="stay-grid">
       <div class="stay-card reveal" id="stay-budget">
         <div class="stay-img-wrap">
-          <img src="./assets/tea_plantation.png" alt="Standard Forest Room Stay" class="stay-img" loading="lazy" />
+          <img src="./assets/sathram_meadows.jpg" alt="Standard Forest Room Stay in Thekkady" class="stay-img w-full h-full object-cover" loading="lazy" />
           <div class="stay-badge">Budget Friendly</div>
         </div>
         <div class="stay-body">
@@ -912,7 +964,7 @@
 
       <div class="stay-card reveal" id="stay-standard">
         <div class="stay-img-wrap">
-          <img src="./assets/jeep_action.png" alt="Standard Valley View Room" class="stay-img" loading="lazy" />
+          <img src="./assets/parunthumpara_valley_viewpoint.jpg" alt="Standard Valley View Room Thekkady" class="stay-img w-full h-full object-cover" loading="lazy" />
           <div class="stay-badge stay-badge-popular">Most Chosen</div>
         </div>
         <div class="stay-body">
@@ -931,7 +983,7 @@
 
       <div class="stay-card reveal" id="stay-luxury">
         <div class="stay-img-wrap">
-          <img src="./assets/tea_plantation.png" alt="Private Forest Cottage Jacuzzi Stay" class="stay-img" loading="lazy" />
+          <img src="./assets/angamoozhy_canopy_viewpoint.jpg" alt="Private Forest Cottage Jacuzzi Stay" class="stay-img w-full h-full object-cover" loading="lazy" />
           <div class="stay-badge stay-badge-luxury">Luxury</div>
         </div>
         <div class="stay-body">
@@ -1299,6 +1351,8 @@
             <div class="form-group"><label for="contactDate">Travel Date</label><input type="date" id="contactDate" required /></div>
             <div class="form-group"><label for="contactService">Package</label>
               <select id="contactServiceSelect">
+                <option value="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹4,500/Jeep)</option>
+                <option value="Kerala &amp; Tamil Nadu Sightseeing">Kerala &amp; Tamil Nadu Sightseeing (₹4,000/Jeep)</option>
                 <option value="Gavi Deep Jungle Safari">Gavi Deep Jungle Safari</option>
                 <option value="Parumpara 4x4 Circuit">Parumpara 4x4 Circuit</option>
                 <option value="Sathram Border Trek">Sathram Border Trek</option>
@@ -1332,6 +1386,7 @@
       <div class="footer-links-col">
         <h4>Safari Circuits</h4>
         <ul>
+          <li><a href="safari-idukki-dam.html">Idukki Dam Full Day (6 Spots)</a></li>
           <li><a href="safari-gavi.html">Gavi Eco-Tourism Safari</a></li>
           <li><a href="safari-sathram.html">Sathram Highland Safari</a></li>
           <li><a href="safari-thekkady-tamilnadu.html">Kerala & Tamil Nadu (4 Hrs)</a></li>
@@ -1383,6 +1438,8 @@
         <div class="form-group">
           <label for="modalPackage">Selected Circuit / Service</label>
           <select id="modalPackage" required>
+            <option value="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹4,500/Jeep)</option>
+            <option value="Kerala & Tamil Nadu Sightseeing Jeep Tour">Kerala & Tamil Nadu Sightseeing (₹4,000/Jeep)</option>
             <option value="Gavi Deep Jungle Safari">Gavi Deep Jungle Safari (Full Day)</option>
             <option value="Parumpara & Angamuzhi 4x4 Circuit">Parumpara & Angamuzhi 4x4 Circuit</option>
             <option value="Sathram & Border Trekking">Sathram & Border Trekking</option>
@@ -1478,400 +1535,4 @@
 
 <script src="./script.js" defer></script>
 
-<!-- ═══════════════ ANIMATED JEEP HERO CANVAS ═══════════════ -->
-<script>
-(function() {
-  var canvas = document.getElementById('jeepCanvas');
-  if (!canvas) return;
-  var ctx = canvas.getContext('2d');
-
-  /* ── resize ── */
-  function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', function(){ resize(); buildTrees(); });
-
-  var W, H;
-
-  /* ── TIME & SPEED ── */
-  var t = 0;
-  var speed = 2.2;          // pixels per frame the scene scrolls
-
-  /* ── COLOURS ── */
-  var SKY_TOP    = '#0a0703';
-  var SKY_HOR    = '#5c2d0a';
-  var SUN_INNER  = '#ff9f1c';
-  var SUN_OUTER  = '#ff6a00';
-  var DUST_COL   = 'rgba(180,100,20,';
-  var GROUND_TOP = '#5a3210';
-  var GROUND_BOT = '#2a1505';
-  var TRACK_COL  = '#3d1f08';
-
-  /* ── STARS ── */
-  var stars = [];
-  for (var i = 0; i < 120; i++) {
-    stars.push({ x: Math.random(), y: Math.random() * 0.55, r: Math.random() * 1.2 + 0.2, a: Math.random() });
-  }
-
-  /* ── TREES (silhouette layers) ── */
-  var treeLayerA = [];  // far trees  – smaller, slower
-  var treeLayerB = [];  // near trees – taller, faster
-  var treeSW = 0;
-
-  function makeTree(x, layer) {
-    var tall = layer === 'b';
-    var h = tall ? (H * 0.22 + Math.random() * H * 0.12) : (H * 0.10 + Math.random() * H * 0.08);
-    var w = h * (0.35 + Math.random() * 0.25);
-    return { x: x, h: h, w: w };
-  }
-
-  function buildTrees() {
-    W = canvas.width; H = canvas.height;
-    treeLayerA = []; treeLayerB = [];
-    for (var x = -200; x < W + 400; x += 55 + Math.random() * 60)
-      treeLayerA.push(makeTree(x, 'a'));
-    for (var x2 = -200; x2 < W + 400; x2 += 80 + Math.random() * 90)
-      treeLayerB.push(makeTree(x2, 'b'));
-    treeSW = W + 600;
-  }
-  buildTrees();
-
-  function scrollTrees(arr, spd, layer) {
-    for (var i = 0; i < arr.length; i++) {
-      arr[i].x -= spd;
-    }
-    // recycle off-screen
-    while (arr.length && arr[0].x < -300) {
-      arr.shift();
-      var newX = (arr.length ? arr[arr.length-1].x : W) + 55 + Math.random() * (layer==='a'?60:90);
-      arr.push(makeTree(newX, layer));
-    }
-  }
-
-  /* draw a simple silhouette jungle-tree (triangle stack / palm) */
-  function drawTree(tree, baseY, col) {
-    ctx.fillStyle = col;
-    var x = tree.x, h = tree.h, w = tree.w;
-    /* trunk */
-    ctx.fillRect(x - w*0.08, baseY - h*0.3, w*0.16, h*0.35);
-    /* three stacked triangles for canopy */
-    var tiers = 3;
-    for (var k = 0; k < tiers; k++) {
-      var frac = 1 - k/tiers;
-      ctx.beginPath();
-      ctx.moveTo(x,            baseY - h*0.25 - (h * 0.75) * frac);
-      ctx.lineTo(x - w*(0.5 + k*0.08), baseY - h*0.25 - (h * 0.75) * (frac - 0.3));
-      ctx.lineTo(x + w*(0.5 + k*0.08), baseY - h*0.25 - (h * 0.75) * (frac - 0.3));
-      ctx.closePath();
-      ctx.fill();
-    }
-  }
-
-  /* ── DUST PARTICLES ── */
-  var dustParts = [];
-  function spawnDust() {
-    var dCount = 6;
-    for (var i = 0; i < dCount; i++) {
-      dustParts.push({
-        x: W * 0.42 + Math.random() * 30,
-        y: H * 0.68 + Math.random() * 20,
-        vx: -(0.5 + Math.random() * 2.5),
-        vy: -(0.3 + Math.random() * 1.2),
-        r: 4 + Math.random() * 18,
-        a: 0.18 + Math.random() * 0.18,
-        life: 0,
-        maxLife: 60 + Math.random() * 80,
-        spread: 0.8 + Math.random() * 1.6
-      });
-    }
-  }
-
-  /* ── JEEP (SVG-like path drawn on canvas) ── */
-  function drawJeep(cx, cy, scale) {
-    ctx.save();
-    ctx.translate(cx, cy);
-    ctx.scale(scale, scale);
-
-    var s = 1;
-    /* body shadow */
-    ctx.globalAlpha = 0.4;
-    ctx.fillStyle = '#000';
-    ctx.beginPath();
-    ctx.ellipse(0, 42*s, 90*s, 14*s, 0, 0, Math.PI*2);
-    ctx.fill();
-    ctx.globalAlpha = 1;
-
-    /* chassis / body */
-    ctx.fillStyle = '#1a1008';
-    ctx.beginPath();
-    ctx.moveTo(-90*s, 30*s);
-    ctx.lineTo(-95*s, 0*s);
-    ctx.lineTo(-60*s, -30*s);
-    ctx.lineTo(-20*s, -44*s);
-    ctx.lineTo( 50*s, -44*s);
-    ctx.lineTo( 80*s, -20*s);
-    ctx.lineTo( 95*s, 10*s);
-    ctx.lineTo( 90*s, 30*s);
-    ctx.closePath();
-    ctx.fill();
-
-    /* roof */
-    ctx.fillStyle = '#0f0905';
-    ctx.beginPath();
-    ctx.moveTo(-58*s, -30*s);
-    ctx.lineTo(-22*s, -66*s);
-    ctx.lineTo( 42*s, -66*s);
-    ctx.lineTo( 78*s, -30*s);
-    ctx.closePath();
-    ctx.fill();
-
-    /* windshield */
-    ctx.fillStyle = 'rgba(60,120,80,0.35)';
-    ctx.beginPath();
-    ctx.moveTo(-50*s, -32*s);
-    ctx.lineTo(-20*s, -62*s);
-    ctx.lineTo( 22*s, -62*s);
-    ctx.lineTo( 48*s, -32*s);
-    ctx.closePath();
-    ctx.fill();
-
-    /* door windows */
-    ctx.fillStyle = 'rgba(60,120,80,0.25)';
-    ctx.beginPath();
-    ctx.rect(-80*s, -28*s, 18*s, 26*s);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.rect( 54*s, -26*s, 18*s, 24*s);
-    ctx.fill();
-
-    /* grill lines */
-    ctx.strokeStyle = '#2a1008';
-    ctx.lineWidth = 2.5*s;
-    for (var g = -6; g <= 6; g += 4) {
-      ctx.beginPath();
-      ctx.moveTo(-95*s, g*s);
-      ctx.lineTo(-78*s, g*s);
-      ctx.stroke();
-    }
-
-    /* headlight glow */
-    ctx.fillStyle = 'rgba(255,220,80,0.7)';
-    ctx.beginPath();
-    ctx.ellipse(-96*s, 4*s, 6*s, 4*s, 0, 0, Math.PI*2);
-    ctx.fill();
-    /* headlight beam */
-    ctx.save();
-    ctx.globalAlpha = 0.08;
-    ctx.fillStyle = '#ffd040';
-    ctx.beginPath();
-    ctx.moveTo(-96*s, 4*s);
-    ctx.lineTo(-200*s, -20*s);
-    ctx.lineTo(-200*s, 28*s);
-    ctx.closePath();
-    ctx.fill();
-    ctx.restore();
-
-    /* exhaust smoke */
-    for (var sm = 0; sm < 3; sm++) {
-      ctx.globalAlpha = 0.12 - sm * 0.03;
-      ctx.fillStyle = '#888';
-      ctx.beginPath();
-      var smX = 94*s + sm * 12*s;
-      var smY = 18*s - sm * 4*s;
-      ctx.arc(smX, smY, (4 + sm*3)*s, 0, Math.PI*2);
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-
-    /* wheels */
-    function drawWheel(wx, wy) {
-      /* tire */
-      ctx.fillStyle = '#111';
-      ctx.beginPath();
-      ctx.arc(wx, wy, 22*s, 0, Math.PI*2);
-      ctx.fill();
-      /* tread pattern */
-      ctx.strokeStyle = '#333';
-      ctx.lineWidth = 3*s;
-      var rot = (t * speed * 0.04) % (Math.PI * 2);
-      for (var td = 0; td < 8; td++) {
-        ctx.save();
-        ctx.translate(wx, wy);
-        ctx.rotate(rot + td * Math.PI/4);
-        ctx.beginPath();
-        ctx.moveTo(0, 13*s);
-        ctx.lineTo(0, 20*s);
-        ctx.stroke();
-        ctx.restore();
-      }
-      /* rim */
-      ctx.fillStyle = '#3a2a10';
-      ctx.beginPath();
-      ctx.arc(wx, wy, 11*s, 0, Math.PI*2);
-      ctx.fill();
-      ctx.fillStyle = '#5a4a20';
-      ctx.beginPath();
-      ctx.arc(wx, wy, 5*s, 0, Math.PI*2);
-      ctx.fill();
-    }
-
-    drawWheel(-58*s, 36*s);
-    drawWheel( 62*s, 36*s);
-
-    /* spare wheel on back */
-    ctx.fillStyle = '#111';
-    ctx.beginPath();
-    ctx.arc(94*s, -10*s, 14*s, 0, Math.PI*2);
-    ctx.fill();
-    ctx.fillStyle = '#2a2010';
-    ctx.beginPath();
-    ctx.arc(94*s, -10*s, 7*s, 0, Math.PI*2);
-    ctx.fill();
-
-    ctx.restore();
-  }
-
-  /* ── GROUND ROCKS ── */
-  var rocks = [];
-  for (var r = 0; r < 18; r++) {
-    rocks.push({ x: Math.random() * 1800, y: 0.72 + Math.random() * 0.1, r: 2 + Math.random() * 7 });
-  }
-
-  /* ── MAIN DRAW LOOP ── */
-  function draw() {
-    W = canvas.width; H = canvas.height;
-    if (!W || !H) { requestAnimationFrame(draw); return; }
-
-    /* 1 — SKY gradient */
-    var skyGrad = ctx.createLinearGradient(0, 0, 0, H * 0.68);
-    skyGrad.addColorStop(0,   SKY_TOP);
-    skyGrad.addColorStop(0.6, '#1a0b02');
-    skyGrad.addColorStop(1,   SKY_HOR);
-    ctx.fillStyle = skyGrad;
-    ctx.fillRect(0, 0, W, H * 0.68);
-
-    /* 2 — STARS (twinkle) */
-    stars.forEach(function(s) {
-      var alpha = 0.3 + 0.5 * Math.abs(Math.sin(t * 0.02 + s.a * 10));
-      ctx.globalAlpha = alpha;
-      ctx.fillStyle = '#fff';
-      ctx.beginPath();
-      ctx.arc(s.x * W, s.y * H, s.r, 0, Math.PI * 2);
-      ctx.fill();
-    });
-    ctx.globalAlpha = 1;
-
-    /* 3 — SUN / full moon glow on horizon */
-    var sunX = W * 0.72, sunY = H * 0.56;
-    var sunGrad = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, 110);
-    sunGrad.addColorStop(0,   'rgba(255,160,10,0.9)');
-    sunGrad.addColorStop(0.25,'rgba(255,80,0,0.55)');
-    sunGrad.addColorStop(1,   'rgba(255,50,0,0)');
-    ctx.fillStyle = sunGrad;
-    ctx.beginPath();
-    ctx.arc(sunX, sunY, 110, 0, Math.PI * 2);
-    ctx.fill();
-    /* sun disc */
-    ctx.fillStyle = SUN_INNER;
-    ctx.beginPath();
-    ctx.arc(sunX, sunY, 32, 0, Math.PI * 2);
-    ctx.fill();
-
-    /* 4 — FAR tree layer */
-    var farBase = H * 0.68;
-    scrollTrees(treeLayerA, speed * 0.4, 'a');
-    treeLayerA.forEach(function(tr) {
-      drawTree(tr, farBase, 'rgba(10,5,2,0.7)');
-    });
-
-    /* 5 — GROUND */
-    var gGrad = ctx.createLinearGradient(0, H * 0.65, 0, H);
-    gGrad.addColorStop(0, GROUND_TOP);
-    gGrad.addColorStop(1, GROUND_BOT);
-    ctx.fillStyle = gGrad;
-    ctx.fillRect(0, H * 0.65, W, H * 0.35);
-
-    /* track ruts */
-    ctx.strokeStyle = TRACK_COL;
-    ctx.lineWidth = 5;
-    ctx.setLineDash([18, 14]);
-    ctx.beginPath();
-    ctx.moveTo(0, H * 0.75);
-    ctx.lineTo(W, H * 0.75);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(0, H * 0.80);
-    ctx.lineTo(W, H * 0.80);
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    /* rocks */
-    rocks.forEach(function(rock) {
-      rock.x -= speed * 1.1;
-      if (rock.x < -20) rock.x = W + Math.random() * 200;
-      ctx.fillStyle = 'rgba(40,20,5,0.9)';
-      ctx.beginPath();
-      ctx.ellipse(rock.x, rock.y * H, rock.r * 1.6, rock.r * 0.7, 0.3, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    /* 6 — NEAR tree layer */
-    scrollTrees(treeLayerB, speed * 0.85, 'b');
-    treeLayerB.forEach(function(tr) {
-      drawTree(tr, farBase, 'rgba(5,2,0,0.9)');
-    });
-
-    /* 7 — DUST particles behind jeep */
-    if (t % 3 === 0) spawnDust();
-    dustParts.forEach(function(p) {
-      p.x += p.vx;
-      p.y += p.vy * 0.5;
-      p.r += p.spread;
-      p.a *= 0.97;
-      p.life++;
-      var fade = 1 - p.life / p.maxLife;
-      ctx.globalAlpha = p.a * fade;
-      var dGrad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
-      dGrad.addColorStop(0, 'rgba(180,100,20,0.5)');
-      dGrad.addColorStop(1, 'rgba(140,60,5,0)');
-      ctx.fillStyle = dGrad;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fill();
-    });
-    ctx.globalAlpha = 1;
-    dustParts = dustParts.filter(function(p) { return p.life < p.maxLife; });
-
-    /* 8 — JEEP — slight bounce on uneven terrain */
-    var jeepBounce = Math.sin(t * 0.18) * 2.5 + Math.sin(t * 0.31) * 1.5;
-    var jeepScale = Math.min(W, H) / 700;
-    jeepScale = Math.max(0.55, Math.min(1.1, jeepScale));
-    drawJeep(W * 0.44, H * 0.70 + jeepBounce, jeepScale);
-
-    /* 9 — GROUND dust streak under wheels */
-    var dustY = H * 0.73;
-    var trailGrad = ctx.createLinearGradient(W * 0.25, 0, W * 0.44, 0);
-    trailGrad.addColorStop(0, 'rgba(160,80,10,0)');
-    trailGrad.addColorStop(1, 'rgba(160,80,10,0.18)');
-    ctx.fillStyle = trailGrad;
-    ctx.beginPath();
-    ctx.ellipse(W * 0.34, dustY, W * 0.10, 12, 0, 0, Math.PI * 2);
-    ctx.fill();
-
-    t++;
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-})();
-</script>
 </body>
-</html>
-
-
-
-
-
-

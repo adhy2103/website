@@ -155,19 +155,24 @@ function updateSafariCalculator() {
 
   const selectedOpt = pkgSelect.options[pkgSelect.selectedIndex];
   const price = parseInt(selectedOpt.dataset.price || '2500', 10);
+  const rateType = selectedOpt.dataset.rateType || 'pax';
   const pkgName = selectedOpt.dataset.name || 'Gavi Deep Jungle Safari';
   const travelDate = (dateInput && dateInput.value) ? dateInput.value : 'Selected Date';
 
-  const totalPrice = price * calcPaxCount;
+  const totalPrice = rateType === 'fixed' ? price : price * calcPaxCount;
   const formattedPrice = `₹${totalPrice.toLocaleString('en-IN')}`;
 
   if (totalEl) totalEl.textContent = formattedPrice;
   if (breakdownEl) {
-    breakdownEl.innerHTML = `<strong>${pkgName}</strong><br/>${calcPaxCount} ${calcPaxCount === 1 ? 'Passenger' : 'Passengers'} • Forest permits & fuel included`;
+    if (rateType === 'fixed') {
+      breakdownEl.innerHTML = `<strong>${pkgName}</strong><br/>Private Vehicle (${calcPaxCount} ${calcPaxCount === 1 ? 'Guest' : 'Guests'}, Max 6) • Fuel, driver &amp; tolls included`;
+    } else {
+      breakdownEl.innerHTML = `<strong>${pkgName}</strong><br/>${calcPaxCount} ${calcPaxCount === 1 ? 'Passenger' : 'Passengers'} • Forest permits &amp; fuel included`;
+    }
   }
 
   if (waBtn) {
-    const textMsg = `Hi! I want to inquire about ${pkgName} for ${calcPaxCount} people on ${travelDate}`;
+    const textMsg = `Hi! I want to inquire about ${pkgName} for ${calcPaxCount} people on ${travelDate} (Estimated Total: ${formattedPrice})`;
     waBtn.href = `https://wa.me/917558876257?text=${encodeURIComponent(textMsg)}`;
   }
 }
@@ -218,7 +223,7 @@ function submitBookingModal(event) {
   const message = lines.join('\n');
   const waUrl = `https://wa.me/917558876257?text=${encodeURIComponent(message)}`;
 
-  window.open(waUrl, '_blank');
+  window.location.href = waUrl;
   showToast('WhatsApp message prepared! Sending your inquiry...');
   closeModal('bookingModal');
 }
@@ -235,7 +240,7 @@ function submitQuickInquiry(event) {
   const message = `Hi Thekkady Trips!\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nService: ${service}${msg ? `\nNote: ${msg}` : ''}`;
   const waUrl = `https://wa.me/917558876257?text=${encodeURIComponent(message)}`;
 
-  window.open(waUrl, '_blank');
+  window.location.href = waUrl;
   showToast('Opening WhatsApp... 🚀');
   form.reset();
 }
