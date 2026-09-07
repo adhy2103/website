@@ -172,6 +172,8 @@
 
     <nav class="nav-links" id="navLinks">
       <a href="#safari-packages" class="nav-link">Safaris</a>
+      <a href="#activities" class="nav-link">Activities</a>
+      <a href="#evening-shows" class="nav-link">Evening Shows</a>
       <a href="#gallery" class="nav-link">Gallery</a>
       <a href="#special-packages" class="nav-link">Packages</a>
       <a href="#stay" class="nav-link">Stay & Bikes</a>
@@ -312,11 +314,20 @@
           <div class="form-group">
             <label for="heroService">Choose Experience</label>
             <select id="heroService" required>
-              <option value="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹4,500/Jeep)</option>
+              <option value="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹8,000/Jeep)</option>
               <option value="Kerala & Tamil Nadu Sightseeing Jeep Tour">Kerala & Tamil Nadu Sightseeing (₹4,000/Jeep)</option>
               <option value="Gavi Deep Jungle Safari">Gavi Deep Jungle Safari</option>
               <option value="Parumpara & Angamuzhi 4x4 Circuit">Parumpara & Angamuzhi 4x4 Circuit</option>
               <option value="Sathram & Border Trekking">Sathram & Border Trekking</option>
+              <option value="Spice Plantation Tour">Spice Plantation Guided Tour</option>
+              <option value="Elephant Safari & Ride (Regular 15m - 1.5h)">Elephant Safari &amp; Ride (Regular 15m – 1.5h)</option>
+              <option value="Elephant Photoshoot & Traditional Dressup">Elephant Photoshoot &amp; Traditional Dressup</option>
+              <option value="Full Day Premium Elephant & Safari Package">Full Day Premium Elephant &amp; Safari Package</option>
+              <option value="Thekkady Full-Day Activity Combo">Full-Day Spice + Elephant Combo</option>
+              <option value="Kalaripayattu Martial Arts Show">Kalaripayattu Martial Arts Show</option>
+              <option value="Kathakali Classical Dance Show">Kathakali Classical Dance Show</option>
+              <option value="Musical Water & Laser Show">Musical Water & Laser Show</option>
+              <option value="Live Magic & Illusion Show">Live Magic & Illusion Show</option>
               <option value="Ramakkalmedu & Vagamon Off-Road">Ramakkalmedu & Vagamon Off-Road</option>
               <option value="Jungle Night / Sunrise Safari">Jungle Night / Sunrise Safari</option>
               <option value="Romantic Kerala Honeymoon">Romantic Kerala Honeymoon</option>
@@ -381,7 +392,19 @@
         <span class="sp-icon-svg">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
         </span>
-        <div><strong>4x4 Safaris</strong><small>Gavi, Parumpara & Sathram</small></div>
+        <div><strong>4x4 Safaris</strong><small>Gavi, Parumpara &amp; Sathram</small></div>
+      </a>
+      <a href="#activities" class="service-pill">
+        <span class="sp-icon-svg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        <div><strong>Spices &amp; Elephants</strong><small>Guided Garden &amp; Rides</small></div>
+      </a>
+      <a href="#evening-shows" class="service-pill">
+        <span class="sp-icon-svg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </span>
+        <div><strong>Evening Shows</strong><small>Kalari &amp; Kathakali</small></div>
       </a>
       <a href="#gallery" class="service-pill">
         <span class="sp-icon-svg">
@@ -707,11 +730,11 @@
           <div class="bento-card__footer">
             <div class="bento-price">
               <span class="bento-price__label">Private Jeep Tariff</span>
-              <span class="bento-price__val">₹4,500 <small>/ jeep (max 6)</small></span>
+              <span class="bento-price__val">₹8,000 <small>/ jeep (max 6)</small></span>
             </div>
             <div class="bento-card__actions">
               <a href="safari-idukki-dam.html" class="btn btn-accent bento-cta-detail">Details →</a>
-              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips%2C%20I%20would%20like%20to%20book%20the%20Idukki%20Dam%20Full%20Day%20Package%20(Rs%204500)" target="_blank" rel="noopener" class="btn btn-whatsapp bento-cta-wa" aria-label="Book Idukki Dam Full Day Package on WhatsApp">
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips%2C%20I%20would%20like%20to%20book%20the%20Idukki%20Dam%20Full%20Day%20Package%20(Rs%208000)" target="_blank" rel="noopener" class="btn btn-whatsapp bento-cta-wa" aria-label="Book Idukki Dam Full Day Package on WhatsApp">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 <span>Book</span>
               </a>
@@ -787,7 +810,7 @@
         <div class="calc-field-group">
           <label for="calcPackage">1. Select Safari Circuit</label>
           <select id="calcPackage" onchange="updateSafariCalculator()">
-            <option value="idukki" data-price="4500" data-rate-type="fixed" data-name="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹4,500/jeep)</option>
+            <option value="idukki" data-price="8000" data-rate-type="fixed" data-name="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹8,000/jeep)</option>
             <option value="thekkady-tn" data-price="4000" data-rate-type="fixed" data-name="Kerala &amp; Tamil Nadu Tour">Kerala &amp; Tamil Nadu Tour (₹4,000/jeep)</option>
             <option value="gavi" data-price="2500" data-rate-type="pax" data-name="Gavi Deep Jungle Safari">Gavi Deep Jungle Safari (₹2,500/pax)</option>
             <option value="parumpara" data-price="2000" data-rate-type="pax" data-name="Parumpara & Angamuzhi 4x4 Circuit">Parumpara & Angamuzhi 4x4 Circuit (₹2,000/pax)</option>
@@ -825,6 +848,277 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
             <span>Book via WhatsApp Now</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════SPICE PLANTATIONS & ELEPHANT EXPERIENCES ═══════════════-->
+<section class="section activities-section" id="activities">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Daytime Experiences</span>
+      <h2 class="section-title">Spice Plantations &amp; <span class="accent">Elephant Safari</span></h2>
+      <p class="section-sub">Immerse your senses in Kerala’s world-famous spice estates and create lifelong memories with gentle elephants in Thekkady</p>
+    </div>
+
+    <div class="activities-grid">
+      <!-- Card 1: Spice Plantation Tour -->
+      <div class="activity-card reveal">
+        <div class="activity-card-img">
+          <img src="./assets/spice_plantation_walk.jpg" alt="Guided Spice Plantation Tour Thekkady" loading="lazy" />
+          <div class="activity-card-overlay">
+            <span class="activity-card-badge">Aromatic Walk</span>
+            <span class="activity-tag-time">🕒 9 AM – 5 PM (1.5 Hrs)</span>
+          </div>
+        </div>
+        <div class="activity-card-body">
+          <h3>Guided Spice Plantation Walk</h3>
+          <p>Stroll through lush organic estates smelling authentic cardamom, black pepper, cinnamon, nutmeg, cloves, vanilla, and medicinal herbs with expert botanist guides.</p>
+          <div class="activity-highlights">
+            <div class="ah-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ah-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Live spice tasting &amp; tree identification</span>
+            </div>
+            <div class="ah-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ah-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Direct farm-fresh organic spice purchase</span>
+            </div>
+            <div class="ah-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ah-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Suitable for all ages &amp; family walks</span>
+            </div>
+          </div>
+          <div class="activity-footer">
+            <div class="activity-price">
+              <span class="act-from">Ticket Tariff</span>
+              <span class="act-price">₹200 <small>/ person</small></span>
+            </div>
+            <div class="activity-actions">
+              <a href="thekkady-elephant-plantation.html" class="btn btn-xs btn-outline-dark">View Details</a>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20the%20*Spice%20Plantation%20Tour*." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp">Book on WA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Elephant Safari & Shower Bathing -->
+      <div class="activity-card reveal">
+        <div class="activity-card-img">
+          <img src="./assets/elephant_ride_safari.jpg" alt="Elephant Safari & Shower Bathing Thekkady" loading="lazy" />
+          <div class="activity-card-overlay">
+            <span class="activity-card-badge">Official Brochure Packages</span>
+            <span class="activity-tag-time">🕒 8:30 AM – 5:30 PM</span>
+          </div>
+        </div>
+        <div class="activity-card-body">
+          <h3>Elephant Safari &amp; Shower Bathing</h3>
+          <p>Mount a gentle pachyderm through spice-scented trails, experience trunk shower baths, timber dragging, traditional Kerala dressup photoshoots, or full-day circuits.</p>
+          <div class="activity-highlights">
+            <div class="ah-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ah-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Regular Packages (15m ride, 1h &amp; 1.5h with shower bath &amp; timber dragging)</span>
+            </div>
+            <div class="ah-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ah-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Pre/Post Wedding &amp; Kerala Traditional Dressup (Mundu/Saree) Photoshoots</span>
+            </div>
+            <div class="ah-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ah-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Full Day &amp; Half Day Premium Packages (Ride + Bath + Safari + Waterfalls)</span>
+            </div>
+          </div>
+          <div class="activity-footer">
+            <div class="activity-price">
+              <span class="act-from">10 Official Packages</span>
+              <span class="act-price">Regular <small>&amp; Full Day Circuits</small></span>
+            </div>
+            <div class="activity-actions">
+              <a href="thekkady-elephant-plantation.html" class="btn btn-xs btn-outline-dark">View Details</a>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20the%20*Elephant%20Safari%20%26%20Packages*." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp">Book on WA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Thekkady Day Combo -->
+      <div class="activity-card reveal">
+        <div class="activity-card-img">
+          <img src="./assets/kerala_tn_bullock_cart_farm.jpg" alt="Thekkady Full-Day Plantation & Wildlife Combo" loading="lazy" />
+          <div class="activity-card-overlay">
+            <span class="activity-card-badge">Best Value Combo</span>
+            <span class="activity-tag-time">🕒 Full Day Experience</span>
+          </div>
+        </div>
+        <div class="activity-card-body">
+          <h3>Spice + Elephant + Village Tour Combo</h3>
+          <p>Seamlessly bundle morning spice plantation walks, afternoon elephant interactions, and traditional bullock cart farmland rides into one hassle-free package.</p>
+          <div class="activity-highlights">
+            <div class="ah-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ah-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Includes entry tickets &amp; guided coordination</span>
+            </div>
+            <div class="ah-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ah-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Private 4x4 Jeep transfer between venues</span>
+            </div>
+            <div class="ah-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ah-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>VIP evening show seat reservations add-on</span>
+            </div>
+          </div>
+          <div class="activity-footer">
+            <div class="activity-price">
+              <span class="act-from">All-Inclusive</span>
+              <span class="act-price">Custom <small>Best Group Rate</small></span>
+            </div>
+            <div class="activity-actions">
+              <a href="thekkady-elephant-plantation.html" class="btn btn-xs btn-outline-dark">View Details</a>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20customize%20a%20*Full-Day%20Spice%20%2B%20Elephant%20Combo*." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp">Inquire Combo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════THEKKADY EVENING PROGRAMS & CULTURAL SHOWS ═══════════════-->
+<section class="section evening-shows-section" id="evening-shows">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Evening Entertainment</span>
+      <h2 class="section-title">Thekkady Evening Programs &amp; <span class="accent">Cultural Shows</span></h2>
+      <p class="section-sub">Experience Kerala's rich martial heritage, captivating dance drama, and high-energy live stage entertainment every evening in Kumily</p>
+    </div>
+
+    <div class="evening-shows-grid">
+      <!-- Show 1: Kalaripayattu -->
+      <div class="show-card reveal">
+        <div class="show-card-img">
+          <img src="./assets/kalaripayattu_show.jpg" alt="Kalaripayattu Martial Arts Thekkady" loading="lazy" />
+          <div class="show-card-overlay">
+            <span class="show-card-badge">Martial Art Heritage</span>
+          </div>
+        </div>
+        <div class="show-card-body">
+          <span class="show-meta-tag">🕒 Daily: 6 PM &amp; 7 PM (1 Hr)</span>
+          <h3>Kalaripayattu Martial Arts</h3>
+          <p>One of the oldest martial arts in the world, with deep cultural roots in Kerala. Skilled practitioners demonstrate agility, intense sword &amp; shield sparring, weapon training, and daring leaps through rings of fire in a traditional <em>Kalari</em> arena.</p>
+          <div class="show-features">
+            <div class="sf-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sf-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Live fire stunts &amp; flexible weapon sparring</span>
+            </div>
+            <div class="sf-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sf-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Authentic earthen Kalari pit theater</span>
+            </div>
+          </div>
+          <div class="show-footer">
+            <div class="show-price">₹300 – ₹400 <small>per ticket</small></div>
+            <div style="display: flex; gap: 6px;">
+              <a href="thekkady-evening-shows.html" class="btn btn-xs btn-outline-dark">Details</a>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20reserve%20tickets%20for%20the%20*Kalaripayattu%20Martial%20Arts%20Show*." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp">Book Seats</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Show 2: Kathakali -->
+      <div class="show-card reveal">
+        <div class="show-card-img">
+          <img src="./assets/kathakali_show.jpg" alt="Kathakali Classical Dance Drama Thekkady" loading="lazy" />
+          <div class="show-card-overlay">
+            <span class="show-card-badge">Classical Drama</span>
+          </div>
+        </div>
+        <div class="show-card-body">
+          <span class="show-meta-tag">🕒 Daily: 5 PM &amp; 7 PM (1 Hr)</span>
+          <h3>Kathakali Dance Drama</h3>
+          <p>Classical dance-drama celebrated for elaborate costumes, vibrant face makeup, and expressive storytelling through <em>Navarasas</em> (facial expressions) and <em>Mudras</em>, portraying epic legends from the Mahabharata and Ramayana with live percussionists.</p>
+          <div class="show-features">
+            <div class="sf-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sf-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Includes pre-show live makeup session demo</span>
+            </div>
+            <div class="sf-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sf-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>English narration &amp; classical Chenda music</span>
+            </div>
+          </div>
+          <div class="show-footer">
+            <div class="show-price">₹300 – ₹400 <small>per ticket</small></div>
+            <div style="display: flex; gap: 6px;">
+              <a href="thekkady-evening-shows.html" class="btn btn-xs btn-outline-dark">Details</a>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20reserve%20tickets%20for%20the%20*Kathakali%20Dance%20Drama%20Show*." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp">Book Seats</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Show 3: Musical Water Laser Show -->
+      <div class="show-card reveal">
+        <div class="show-card-img">
+          <img src="./assets/water_laser_show.jpg" alt="Musical Water Fountain and Laser Show Thekkady" loading="lazy" />
+          <div class="show-card-overlay">
+            <span class="show-card-badge">Laser &amp; Fountains</span>
+          </div>
+        </div>
+        <div class="show-card-body">
+          <span class="show-meta-tag">🕒 Daily: 7 PM &amp; 8 PM (45 Min)</span>
+          <h3>Musical Water &amp; Laser Show</h3>
+          <p>A dazzling open-air spectacle featuring choreographed dancing water fountains shooting into the night sky, synchronized with vibrant multi-colored laser lights and evocative Kerala music.</p>
+          <div class="show-features">
+            <div class="sf-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sf-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Choreographed dancing fountains &amp; laser beams</span>
+            </div>
+            <div class="sf-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sf-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Open-air amphitheater with tiered seating</span>
+            </div>
+          </div>
+          <div class="show-footer">
+            <div class="show-price">₹250 – ₹350 <small>per ticket</small></div>
+            <div style="display: flex; gap: 6px;">
+              <a href="thekkady-evening-shows.html" class="btn btn-xs btn-outline-dark">Details</a>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20reserve%20tickets%20for%20the%20*Musical%20Water%20%26%20Laser%20Show*." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp">Book Seats</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Show 4: Magic & Illusion Show -->
+      <div class="show-card reveal">
+        <div class="show-card-img">
+          <img src="./assets/magic_show.jpg" alt="Grand Magic & Illusion Show Thekkady" loading="lazy" />
+          <div class="show-card-overlay">
+            <span class="show-card-badge">Family Illusion</span>
+          </div>
+        </div>
+        <div class="show-card-body">
+          <span class="show-meta-tag">🕒 Daily: 6 PM – 7 PM (1 Hr)</span>
+          <h3>Live Magic &amp; Illusion Show</h3>
+          <p>Mind-bending live stage magic, astonishing sleight of hand, escapology, and humorous interactive audience participation. An unforgettable evening performance loved by kids and adults alike.</p>
+          <div class="show-features">
+            <div class="sf-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sf-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Interactive stage illusions &amp; family comedy</span>
+            </div>
+            <div class="sf-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sf-icon"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Comfortable indoor air-conditioned auditorium</span>
+            </div>
+          </div>
+          <div class="show-footer">
+            <div class="show-price">₹250 – ₹350 <small>per ticket</small></div>
+            <div style="display: flex; gap: 6px;">
+              <a href="thekkady-evening-shows.html" class="btn btn-xs btn-outline-dark">Details</a>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20reserve%20tickets%20for%20the%20*Magic%20%26%20Illusion%20Show*." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp">Book Seats</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1435,11 +1729,20 @@
             <div class="form-group"><label for="contactDate">Travel Date</label><input type="date" id="contactDate" required /></div>
             <div class="form-group"><label for="contactService">Package</label>
               <select id="contactServiceSelect">
-                <option value="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹4,500/Jeep)</option>
+                <option value="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹8,000/Jeep)</option>
                 <option value="Kerala &amp; Tamil Nadu Sightseeing">Kerala &amp; Tamil Nadu Sightseeing (₹4,000/Jeep)</option>
                 <option value="Gavi Deep Jungle Safari">Gavi Deep Jungle Safari</option>
                 <option value="Parumpara 4x4 Circuit">Parumpara 4x4 Circuit</option>
                 <option value="Sathram Border Trek">Sathram Border Trek</option>
+                <option value="Spice Plantation Tour">Spice Plantation Guided Tour</option>
+                <option value="Elephant Safari & Ride (Regular 15m - 1.5h)">Elephant Safari &amp; Ride (Regular 15m – 1.5h)</option>
+                <option value="Elephant Photoshoot & Traditional Dressup">Elephant Photoshoot &amp; Traditional Dressup</option>
+                <option value="Full Day Premium Elephant & Safari Package">Full Day Premium Elephant &amp; Safari Package</option>
+                <option value="Thekkady Full-Day Activity Combo">Full-Day Spice + Elephant Combo</option>
+                <option value="Kalaripayattu Martial Arts Show">Kalaripayattu Martial Arts Show</option>
+                <option value="Kathakali Classical Dance Show">Kathakali Classical Dance Show</option>
+                <option value="Musical Water & Laser Show">Musical Water & Laser Show</option>
+                <option value="Live Magic & Illusion Show">Live Magic & Illusion Show</option>
                 <option value="Custom Kerala Package">Custom Kerala Package</option>
               </select>
             </div>
@@ -1477,6 +1780,16 @@
           <li><a href="safari-angamoozhy.html">Angamoozhy 4x4 Circuit</a></li>
           <li><a href="safari-parunthumpara.html">Parunthumpara Eagle Rock</a></li>
           <li><a href="safari-custom.html">Custom VIP Full Day</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Experiences &amp; Shows</h4>
+        <ul>
+          <li><a href="thekkady-evening-shows.html">Thekkady Evening Shows</a></li>
+          <li><a href="thekkady-elephant-plantation.html">Spices &amp; Elephant Safari</a></li>
+          <li><a href="index.html#activities">Plantation Guided Walks</a></li>
+          <li><a href="index.html#evening-shows">Kalaripayattu &amp; Kathakali</a></li>
         </ul>
       </div>
 
@@ -1522,11 +1835,20 @@
         <div class="form-group">
           <label for="modalPackage">Selected Circuit / Service</label>
           <select id="modalPackage" required>
-            <option value="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹4,500/Jeep)</option>
+            <option value="Idukki Dam Full Day Package">Idukki Dam Full Day Package (₹8,000/Jeep)</option>
             <option value="Kerala & Tamil Nadu Sightseeing Jeep Tour">Kerala & Tamil Nadu Sightseeing (₹4,000/Jeep)</option>
             <option value="Gavi Deep Jungle Safari">Gavi Deep Jungle Safari (Full Day)</option>
             <option value="Parumpara & Angamuzhi 4x4 Circuit">Parumpara & Angamuzhi 4x4 Circuit</option>
             <option value="Sathram & Border Trekking">Sathram & Border Trekking</option>
+            <option value="Spice Plantation Tour">Spice Plantation Guided Tour</option>
+            <option value="Elephant Safari & Ride (Regular 15m - 1.5h)">Elephant Safari &amp; Ride (Regular 15m – 1.5h)</option>
+            <option value="Elephant Photoshoot & Traditional Dressup">Elephant Photoshoot &amp; Traditional Dressup</option>
+            <option value="Full Day Premium Elephant & Safari Package">Full Day Premium Elephant &amp; Safari Package</option>
+            <option value="Thekkady Full-Day Activity Combo">Full-Day Spice + Elephant Combo</option>
+            <option value="Kalaripayattu Martial Arts Show">Kalaripayattu Martial Arts Show</option>
+            <option value="Kathakali Classical Dance Show">Kathakali Classical Dance Show</option>
+            <option value="Musical Water & Laser Show">Musical Water & Laser Show</option>
+            <option value="Live Magic & Illusion Show">Live Magic & Illusion Show</option>
             <option value="Ramakkalmedu & Vagamon Off-Road">Ramakkalmedu & Vagamon Off-Road</option>
             <option value="Jungle Night / Sunrise Safari">Jungle Night / Sunrise Safari</option>
             <option value="Romantic Kerala Honeymoon">Romantic Kerala Honeymoon</option>

@@ -1558,6 +1558,290 @@ input, select, textarea { font-family: inherit; }
 }
 
 /* ═══════════════════════════════════════════════════
+   PLANTATION & ELEPHANT EXPERIENCES SECTION
+   ═══════════════════════════════════════════════════ */
+.activities-section {
+  background: var(--bg-secondary);
+  position: relative;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.activity-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: var(--trans-slow);
+  display: flex;
+  flex-direction: column;
+}
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.09), var(--shadow-amber);
+  border-color: rgba(245,158,11,0.3);
+  background: rgba(255,255,255,0.06);
+}
+.activity-card-img {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+.activity-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.activity-card:hover .activity-card-img img { transform: scale(1.06); }
+.activity-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(9,14,11,0.9) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 14px;
+}
+.activity-card-badge {
+  background: var(--amber-500);
+  color: #0a0a0a;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.activity-tag-time {
+  background: rgba(9,14,11,0.85);
+  color: var(--amber-400);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50px;
+  border: 1px solid rgba(245,158,11,0.3);
+  backdrop-filter: blur(4px);
+}
+.activity-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.activity-card-body h3 {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.activity-card-body p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 16px;
+  flex: 1;
+}
+.activity-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.ah-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.ah-icon {
+  color: var(--amber-400);
+  flex-shrink: 0;
+}
+.activity-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-card);
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+.activity-price {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.act-from {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.act-price {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--amber-400);
+}
+.act-price small {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.activity-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ═══════════════════════════════════════════════════
+   THEKKADY EVENING SHOWS & CULTURAL SECTION
+   ═══════════════════════════════════════════════════ */
+.evening-shows-section {
+  background: var(--surface-card);
+  position: relative;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.evening-shows-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.show-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+  transition: var(--trans-slow);
+  display: flex;
+  flex-direction: column;
+}
+.show-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.09), var(--shadow-amber);
+  border-color: rgba(245,158,11,0.3);
+  background: rgba(255,255,255,0.06);
+}
+.show-card-img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #000;
+}
+.show-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.show-card:hover .show-card-img img { transform: scale(1.06); }
+.show-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(9,14,11,0.9) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 12px;
+}
+.show-card-badge {
+  background: var(--amber-500);
+  color: #0a0a0a;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.show-card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.show-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--amber-400);
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 6px;
+  padding: 3px 8px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+.show-card-body h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.show-card-body p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  flex: 1;
+}
+.show-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.sf-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.sf-icon {
+  color: var(--amber-400);
+  flex-shrink: 0;
+}
+.show-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-card);
+  margin-top: auto;
+}
+.show-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--amber-400);
+}
+.show-price small {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════
    STAY SECTION
    ═══════════════════════════════════════════════════ */
 .stay-section {
@@ -2646,6 +2930,8 @@ input, select, textarea { font-family: inherit; }
   .bento-card--custom { grid-column: 1 / -1; }
 
   .special-grid { grid-template-columns: 1fr 1fr; }
+  .activities-grid { grid-template-columns: 1fr 1fr; }
+  .evening-shows-grid { grid-template-columns: 1fr 1fr; }
   .stay-grid { grid-template-columns: 1fr 1fr; }
   .bike-grid { grid-template-columns: 1fr 1fr; }
   .destinations-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2784,6 +3070,8 @@ input, select, textarea { font-family: inherit; }
   .reviews-masonry { columns: 1; }
 
   .special-grid { grid-template-columns: 1fr; }
+  .activities-grid { grid-template-columns: 1fr; }
+  .evening-shows-grid { grid-template-columns: 1fr; }
   .stay-grid { grid-template-columns: 1fr; }
   .bike-grid { grid-template-columns: 1fr; }
   .destinations-grid { grid-template-columns: 1fr 1fr; }
