@@ -89,7 +89,7 @@
   --botanical-600: #226040;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--font-body);
@@ -105,7 +105,10 @@ a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 button { cursor: pointer; font-family: inherit; }
-input, select, textarea { font-family: inherit; }
+input, select, textarea { font-family: inherit; box-sizing: border-box; max-width: 100%; }
+
+/* Universal box-sizing — prevents padding/border causing overflow */
+*, *::before, *::after { box-sizing: border-box; }
 
 /* ─── CONTAINER ───────────────────────────────── */
 .container {
@@ -170,9 +173,10 @@ input, select, textarea { font-family: inherit; }
   font-weight: 700;
   border: none;
   transition: var(--trans-base);
-  white-space: nowrap;
+  white-space: normal;     /* wrap text on very small screens */
   cursor: pointer;
   letter-spacing: 0.01em;
+  text-align: center;
 }
 
 .btn-primary {
@@ -542,7 +546,7 @@ input, select, textarea { font-family: inherit; }
   position: relative;
   z-index: 5;
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr minmax(0, 420px);
   gap: 56px;
   align-items: center;
   width: 100%;
@@ -853,7 +857,7 @@ input, select, textarea { font-family: inherit; }
   border-radius: 50px;
   padding: 10px 20px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  white-space: nowrap;
+  white-space: normal;   /* allow wrapping on small screens */
   transition: var(--trans-base);
 }
 .trust-badge:hover {
@@ -3089,6 +3093,154 @@ input, select, textarea { font-family: inherit; }
 
   .calc-card { padding: 24px; }
   .nav-cta { display: none; }
+
+  /* ── Activity / package card images — uniform height on mobile ── */
+  .activity-card-img img,
+  .activity-card-img { height: 200px; }
+
+  /* ── Bento card media — taller on single column ── */
+  .bento-card__media { height: 220px; }
+
+  /* ── Special packages / evening shows cards ── */
+  .special-card-img, .show-card-img { height: 200px; }
+  .special-card-img img, .show-card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── Section header reduced spacing ── */
+  .section-header { margin-bottom: 32px; }
+  .section-sub { font-size: 14px; }
+
+  /* ── Prevent any fixed-width inner elements from overflowing ── */
+  .hero-form-card, .booking-widget-card { box-sizing: border-box; width: 100%; }
+
+  /* ── Prevent bento footer actions overflowing ── */
+  .bento-cta-detail, .bento-cta-wa { min-width: 0; font-size: 12px; padding: 8px 10px; }
+
+  /* ── Contact form row always single column on mobile ── */
+  .form-row { display: flex; flex-direction: column; gap: 12px; }
+
+  /* ── Inquiry form inside hero: full width selects ── */
+  .inquiry-form select, .inquiry-form input, .contact-form select, .contact-form input { width: 100%; box-sizing: border-box; }
+
+  /* ── Modal ── */
+  .modal-content { margin: 12px; width: calc(100% - 24px); max-height: 88vh; overflow-y: auto; }
+  .modal-body { padding: 20px; }
+
+  /* ── Footer ── */
+  .footer-links-col h4 { margin-top: 8px; }
+}
+
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE — SMALL PHONES (max 430px)
+   Covers iPhone SE, Pixel 6a, Galaxy A series (360–430px)
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 430px) {
+
+  /* ── Reduce container padding for narrow screens ── */
+  .container { padding: 0 14px; }
+
+  /* ── Hero heading — prevent clipping ── */
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.12;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .hero-sub { font-size: 13.5px; }
+  .hero { padding: 84px 0 28px; }
+
+  /* ── CTA buttons — touch-friendly full width ── */
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;   /* ≥44px touch target */
+    font-size: 14px;
+  }
+
+  /* ── Pills — smaller on narrow phones ── */
+  .pill { font-size: 11px; padding: 5px 10px; }
+  .hero-services-pills { gap: 5px; }
+
+  /* ── Live ticker ── */
+  .live-ticker { font-size: 10.5px; padding: 5px 10px; }
+
+  /* ── Stats bar ── */
+  .hero-stats { padding: 12px 14px; gap: 10px; }
+  .stat-num { font-size: 14px; }
+  .stat-label { font-size: 11px; }
+
+  /* ── Trust badges — compact on narrow phones ── */
+  .trust-badge { padding: 8px 14px; gap: 8px; }
+  .trust-badge-icon { width: 24px; height: 24px; }
+  .trust-badge-title { font-size: 12px; }
+  .trust-badge-sub { font-size: 10px; }
+
+  /* ── Section typography ── */
+  .section-title { font-size: 1.55rem; letter-spacing: -0.02em; }
+  .section-tag { font-size: 10.5px; }
+  .section { padding: 52px 0; }
+
+  /* ── Navbar ── */
+  .nav-container { padding: 0 14px; gap: 10px; }
+  .logo-text { font-size: 16px; }
+  .nav-logo-img { width: 30px; height: 30px; }
+
+  /* ── Bento card body ── */
+  .bento-card__body { padding: 14px; }
+  .bento-card__title { font-size: 15px; }
+  .bento-card__desc { font-size: 13px; }
+  .bento-price__val { font-size: 15px; }
+
+  /* ── Activity card body ── */
+  .activity-card-body { padding: 14px; }
+  .activity-card-body h3 { font-size: 15px; }
+  .activity-card-body p { font-size: 13px; }
+
+  /* ── Btn sizes — smaller xs buttons ── */
+  .btn-xs { padding: 8px 12px; font-size: 11.5px; }
+  .btn-sm { padding: 10px 16px; font-size: 13px; }
+
+  /* ── Calculator card ── */
+  .calc-card { padding: 18px; }
+  .calc-header h3 { font-size: 1.4rem; }
+
+  /* ── Service pills scroll bar ── */
+  .service-pill { padding: 12px 14px; gap: 8px; }
+  .sp-icon-svg { width: 34px; height: 34px; }
+  .service-pill div strong { font-size: 12.5px; }
+  .service-pill div small { font-size: 10.5px; }
+
+  /* ── Contact section ── */
+  .contact-grid { gap: 24px; }
+
+  /* ── Gallery grid — keep 2-col but compact ── */
+  .gallery-grid { gap: 8px; }
+
+  /* ── Review cards ── */
+  .review-text { font-size: 13px; }
+
+  /* ── Footer ── */
+  .footer { padding: 40px 0 24px; }
+  .footer-grid { gap: 20px; }
+}
+
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE — ULTRA-NARROW PHONES (max 360px)
+   Covers Galaxy A03, budget Android phones
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .container { padding: 0 12px; }
+  .hero-title { font-size: 1.6rem; }
+  .section-title { font-size: 1.4rem; }
+  .logo-text { font-size: 14px; }
+  .nav-logo-img { width: 26px; height: 26px; }
+  .btn-lg { padding: 12px 18px; font-size: 13.5px; }
+  .hero-actions .btn { padding: 13px 16px; }
+  .trust-badge { padding: 7px 12px; }
+  .pill { font-size: 10.5px; padding: 4px 9px; }
+  .bento-card__body { padding: 12px; }
+  .activity-card-body { padding: 12px; }
 }
 
 
