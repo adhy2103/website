@@ -3926,6 +3926,11 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
   line-height: 1.5;
 }
 
+
+/* ═══════════════════════════════════════════════════
+   SUBPAGE RESPONSIVE — TABLET (max 991px)
+   Applies to all safari detail pages, elephant, evening shows
+   ═══════════════════════════════════════════════════ */
 @media (max-width: 991px) {
   .detail-hero-grid { grid-template-columns: 1fr; }
   .detail-hero-img { height: 320px; }
@@ -3937,9 +3942,177 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
   .fleet-specs-grid { grid-template-columns: 1fr; }
   .related-grid { grid-template-columns: 1fr; }
   .gavi-gallery-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Detail hero actions — wrap buttons */
+  .detail-hero-actions { flex-wrap: wrap; gap: 10px; }
+  .detail-hero-actions .btn { flex: 1; min-width: 160px; justify-content: center; }
+
+  /* Detail block padding */
+  .detail-block { padding: 24px; }
 }
 
-@media (max-width: 600px) {
-  .detail-key-metrics { grid-template-columns: 1fr; }
+/* ═══════════════════════════════════════════════════
+   SUBPAGE RESPONSIVE — MOBILE (max 640px)
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .detail-key-metrics { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .gavi-gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  /* Hero section on subpages */
+  .detail-hero { padding: 36px 0 40px; }
+  .detail-hero-title {
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .detail-hero-lead { font-size: 14px; }
+  .detail-hero-img { height: 260px; }
+
+  /* Detail block */
+  .detail-block { padding: 20px; border-radius: var(--radius-md); }
+  .detail-block-title { font-size: 1.25rem; }
+
+  /* Booking widget sidebar */
+  .booking-widget-card { padding: 20px; }
+  .widget-price-tag .amount { font-size: 2.2rem; }
+
+  /* Timeline */
+  .itinerary-timeline::before { left: 14px; }
+  .timeline-node { width: 30px; height: 30px; font-size: 12px; }
+  .timeline-card { padding: 14px 16px; }
+  .timeline-title { font-size: 14px; }
+  .timeline-desc { font-size: 13px; }
+
+  /* Fleet specs */
+  .fleet-card { padding: 20px; }
+
+  /* Metric boxes */
+  .metric-box { padding: 10px; }
+  .metric-value { font-size: 12.5px; }
+
+  /* Incl/Excl cards */
+  .incl-card { padding: 18px; }
+
+  /* Related cards */
+  .related-grid { gap: 16px; }
+  .related-img-wrap { height: 160px; }
+
+  /* Detail hero actions stack on mobile */
+  .detail-hero-actions { flex-direction: column; }
+  .detail-hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* Highlight mini cards */
+  .highlight-mini-card { padding: 14px; gap: 10px; }
+  .hl-icon-wrap { width: 36px; height: 36px; }
+
+  /* Evening shows / elephant specific */
+  .show-card { border-radius: var(--radius-md); }
+  .show-schedule-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════
+   SUBPAGE RESPONSIVE — SMALL PHONES (max 430px)
+   Covers iPhone SE, Pixel, Galaxy A (360–430px)
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 430px) {
+  /* Container safe padding */
+  .container { padding: 0 14px; }
+
+  /* Subpage hero */
+  .detail-hero { padding: 28px 0 32px; }
+  .detail-hero-title { font-size: 1.65rem; line-height: 1.15; }
+  .detail-hero-lead { font-size: 13.5px; }
+  .detail-hero-img { height: 220px; }
+
+  /* Key metrics — 2 col on narrow phone */
+  .detail-key-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .metric-box { padding: 9px 10px; }
+  .metric-label { font-size: 10px; }
+  .metric-value { font-size: 12px; }
+
+  /* Detail block */
+  .detail-block { padding: 16px; }
+  .detail-block-title { font-size: 1.15rem; gap: 8px; }
+  .detail-prose p { font-size: 13.5px; }
+
+  /* Booking widget */
+  .booking-widget-card { padding: 16px; }
+  .widget-price-tag .amount { font-size: 2rem; }
+  .widget-price-tag .label { font-size: 10px; }
+  .widget-input { padding: 9px 10px; font-size: 13px; }
+
+  /* FAQ */
+  .faq-header-btn { font-size: 13.5px; padding: 14px 16px; }
+  .faq-drawer-content { font-size: 13px; padding: 0 16px 14px; }
+
+  /* Timeline */
+  .timeline-step { gap: 12px; }
+  .timeline-node { width: 28px; height: 28px; font-size: 11px; flex-shrink: 0; }
+  .timeline-card { padding: 12px 14px; }
+  .timeline-title { font-size: 13.5px; }
+
+  /* Highlights mini */
+  .highlight-mini-card { padding: 12px; gap: 8px; }
+  .hl-icon-wrap { width: 32px; height: 32px; min-width: 32px; }
+  .hl-card-body h4 { font-size: 13.5px; }
+  .hl-card-body p { font-size: 12px; }
+
+  /* Incl/Excl */
+  .incl-card { padding: 14px; }
+  .incl-header { font-size: 13.5px; }
+  .check-list-ul li { font-size: 13px; }
+
+  /* Gallery */
+  .gavi-gallery-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .gavi-photo-card-img-wrap { height: 160px; }
+  .gavi-photo-caption strong { font-size: 0.82rem; }
+  .gavi-photo-caption p { font-size: 0.72rem; }
+
+  /* Related safaris */
+  .related-img-wrap { height: 150px; }
+  .related-body h4 { font-size: 14.5px; }
+  .related-body p { font-size: 12.5px; }
+
+  /* Breadcrumbs */
+  .detail-breadcrumbs { font-size: 11.5px; gap: 5px; }
+  .detail-header-bar { padding: 10px 0; }
+
+  /* Detail badge row */
+  .detail-hero-badge-row { gap: 8px; }
+  .detail-tag, .detail-rating-pill { font-size: 11px; padding: 4px 10px; }
+
+  /* Fleet card */
+  .fleet-card { padding: 16px; }
+  .fleet-specs-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  /* Buttons inside subpages */
+  .detail-hero-actions .btn { padding: 13px 18px; font-size: 13.5px; }
+
+  /* Section titles on subpages */
+  .section-title { font-size: 1.5rem; }
+}
+
+/* ═══════════════════════════════════════════════════
+   SUBPAGE RESPONSIVE — ULTRA-NARROW (max 360px)
+   Covers smallest Android budget phones
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .container { padding: 0 12px; }
+  .detail-hero-title { font-size: 1.5rem; }
+  .detail-key-metrics { grid-template-columns: 1fr; gap: 8px; }
+  .metric-value { font-size: 12px; }
+  .detail-block { padding: 14px; }
+  .detail-block-title { font-size: 1.05rem; }
+  .booking-widget-card { padding: 14px; }
   .gavi-gallery-grid { grid-template-columns: 1fr; }
+  .fleet-specs-grid { grid-template-columns: 1fr; }
+  .highlight-mini-card { flex-direction: column; }
+  .timeline-step { gap: 10px; }
+  .faq-header-btn { font-size: 13px; padding: 13px 14px; }
+  .detail-hero-actions .btn { padding: 12px 14px; font-size: 13px; }
+  .related-body h4 { font-size: 14px; }
+  .incl-card { padding: 12px; }
 }
