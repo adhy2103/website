@@ -503,18 +503,18 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
   position: absolute;
   inset: 0;
   background:
-    /* Bottom fade — darkens ground/silhouettes so text & stats pop */
+    /* Bottom fade — darkens ground so text & stats pop */
     linear-gradient(to bottom,
-      rgba(5,10,7,0.40)  0%,
-      rgba(5,10,7,0.15) 35%,
-      rgba(5,10,7,0.55) 75%,
-      rgba(5,10,7,0.92) 100%
+      rgba(5,10,7,0.50)  0%,
+      rgba(5,10,7,0.20) 35%,
+      rgba(5,10,7,0.65) 75%,
+      rgba(5,10,7,0.95) 100%
     ),
-    /* Left-to-right: heavy on left for text, opens up toward the sunset sky */
+    /* Left-to-right: heavy on left for text readability */
     linear-gradient(to right,
-      rgba(5,10,7,0.72) 0%,
-      rgba(5,10,7,0.30) 45%,
-      rgba(5,10,7,0.05) 70%,
+      rgba(5,10,7,0.80) 0%,
+      rgba(5,10,7,0.40) 45%,
+      rgba(5,10,7,0.10) 70%,
       rgba(5,10,7,0.00) 100%
     );
   z-index: 3;
@@ -2981,10 +2981,32 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
   /* ── Bug 1 Fix: hero layout ── */
   .hero {
     padding: 90px 0 32px;    /* trust badges now in-flow, no bottom clearance needed */
-    min-height: auto;
+    min-height: 100svh;       /* use svh so mobile browser chrome doesn't clip */
     flex-direction: column;   /* stack hero-wrapper + trust-badges vertically */
     align-items: stretch;
     justify-content: flex-start;
+  }
+
+  /* ── Hero image — mobile framing for the two-jeep landscape shot ── */
+  .hero-bg-img {
+    object-position: 55% center;  /* nudge right to frame branded jeep on windscreen */
+  }
+
+  /* ── Stronger overlay on mobile — brighter image needs more contrast for text ── */
+  .hero-overlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(5,10,7,0.60)  0%,
+        rgba(5,10,7,0.30) 30%,
+        rgba(5,10,7,0.75) 70%,
+        rgba(5,10,7,0.97) 100%
+      ),
+      linear-gradient(to right,
+        rgba(5,10,7,0.90) 0%,
+        rgba(5,10,7,0.55) 50%,
+        rgba(5,10,7,0.15) 80%,
+        rgba(5,10,7,0.00) 100%
+      );
   }
 
   /* ── Bug 1 Fix: hero text must respect container padding ── */
@@ -3147,7 +3169,30 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
     overflow-wrap: anywhere;
   }
   .hero-sub { font-size: 13.5px; }
-  .hero { padding: 84px 0 28px; }
+  .hero { padding: 84px 0 28px; min-height: 100svh; }
+
+  /* ── Hero image — tighter crop for narrow phones (360–430px portrait) ── */
+  .hero-bg-img {
+    object-position: 60% center;  /* show the closer front jeep with Thekkady Trips logo */
+  }
+
+  /* ── Overlay — maximum contrast on small screens ── */
+  .hero-overlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(5,10,7,0.65)  0%,
+        rgba(5,10,7,0.35) 30%,
+        rgba(5,10,7,0.80) 65%,
+        rgba(5,10,7,0.98) 100%
+      ),
+      linear-gradient(to right,
+        rgba(5,10,7,0.95) 0%,
+        rgba(5,10,7,0.60) 55%,
+        rgba(5,10,7,0.20) 80%,
+        rgba(5,10,7,0.00) 100%
+      );
+  }
+
 
   /* ── CTA buttons — touch-friendly full width ── */
   .hero-actions .btn {
@@ -3241,6 +3286,27 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
   .pill { font-size: 10.5px; padding: 4px 9px; }
   .bento-card__body { padding: 12px; }
   .activity-card-body { padding: 12px; }
+
+  /* ── Hero image — ultra-narrow: focus tightly on the closer front jeep ── */
+  .hero-bg-img {
+    object-position: 65% center;
+  }
+  /* ── Full-black bottom on smallest screens — text must always be readable ── */
+  .hero-overlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(5,10,7,0.70)  0%,
+        rgba(5,10,7,0.40) 30%,
+        rgba(5,10,7,0.85) 65%,
+        rgba(5,10,7,1.00) 100%
+      ),
+      linear-gradient(to right,
+        rgba(5,10,7,0.97) 0%,
+        rgba(5,10,7,0.65) 55%,
+        rgba(5,10,7,0.25) 80%,
+        rgba(5,10,7,0.00) 100%
+      );
+  }
 }
 
 
