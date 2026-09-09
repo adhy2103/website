@@ -134,6 +134,23 @@ function switchSafari(schemeId, element) {
   }
 }
 
+/* ─── WHATSAPP REDIRECT HELPER ─────────────────────── */
+function redirectToWhatsApp(waUrl) {
+  try {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = waUrl;
+    } else {
+      const win = window.open(waUrl, '_blank');
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        window.location.href = waUrl;
+      }
+    }
+  } catch (e) {
+    window.location.href = waUrl;
+  }
+}
+
 /* ─── SAFARI COST CALCULATOR WIDGET ─────────────── */
 let calcPaxCount = 2;
 
@@ -144,9 +161,23 @@ function changePassengers(delta) {
   updateSafariCalculator();
 }
 
+function handleCalcWaRedirect(e) {
+  if (e) e.preventDefault();
+  const waBtn = document.getElementById('calcWaBtn');
+  if (waBtn && waBtn.href && waBtn.href !== '#' && !waBtn.href.endsWith('#')) {
+    redirectToWhatsApp(waBtn.href);
+  } else {
+    updateSafariCalculator();
+    const btn = document.getElementById('calcWaBtn');
+    if (btn && btn.href) redirectToWhatsApp(btn.href);
+  }
+}
+
 function updateSafariCalculator() {
   const pkgSelect = document.getElementById('calcPackage');
   const dateInput = document.getElementById('calcDate');
+  const natSelect = document.getElementById('calcNationality');
+  const natGroup = document.getElementById('calcNationalityGroup');
   const totalEl = document.getElementById('calcTotalPrice');
   const breakdownEl = document.getElementById('calcBreakdown');
   const waBtn = document.getElementById('calcWaBtn');
@@ -154,26 +185,63 @@ function updateSafariCalculator() {
   if (!pkgSelect) return;
 
   const selectedOpt = pkgSelect.options[pkgSelect.selectedIndex];
-  const price = parseInt(selectedOpt.dataset.price || '2500', 10);
-  const rateType = selectedOpt.dataset.rateType || 'pax';
-  const pkgName = selectedOpt.dataset.name || 'Gavi Deep Jungle Safari';
-  const travelDate = (dateInput && dateInput.value) ? dateInput.value : 'Selected Date';
+  const pkgVal = selectedOpt.value;
+  const pkgName = selectedOpt.dataset.name || selectedOpt.text;
+  const rateType = selectedOpt.dataset.rateType || (pkgVal === 'gavi' ? 'gavi' : 'fixed');
+  const basePrice = parseInt(selectedOpt.dataset.price || '0', 10);
+  const travelDate = (dateInput && dateInput.value) ? dateInput.value : 'Upcoming Date';
+  const nationality = (natSelect && natSelect.value) ? natSelect.value : 'indian';
+  const isForeigner = nationality === 'foreigner';
 
-  const totalPrice = rateType === 'fixed' ? price : price * calcPaxCount;
+  // Toggle nationality dropdown visibility if Gavi
+  if (natGroup) {
+    natGroup.style.display = (pkgVal === 'gavi') ? 'block' : 'none';
+  }
+
+  let totalPrice = 0;
+  let breakdownHtml = '';
+  let waMsg = '';
+
+  if (pkgVal === 'gavi') {
+    const jeepFare = 3500;
+    const kfdcPerPerson = 2065;
+    const forestFeePerPerson = isForeigner ? 500 : 45;
+    const totalKfdc = kfdcPerPerson * calcPaxCount;
+    const totalForest = forestFeePerPerson * calcPaxCount;
+    totalPrice = jeepFare + totalKfdc + totalForest;
+
+    breakdownHtml = `<strong>Gavi Eco-Tourism Jeep Safari</strong><br/>
+      Private Jeep: ₹3,500 + KFDC (${calcPaxCount} × ₹2,065 = ₹${totalKfdc.toLocaleString('en-IN')}) + Entry (${calcPaxCount} × ₹${forestFeePerPerson} = ₹${totalForest.toLocaleString('en-IN')})<br/>
+      <small style="color:var(--forest-400)">✓ Includes: 4x4 Jeep, Forest Entry, Breakfast, Lunch, Boating &amp; Trekking</small>`;
+
+    waMsg = `Hi Thekkady Trips! I want to book the *Gavi Eco-Tourism Jeep Safari (5:30 AM)* for ${calcPaxCount} people (${isForeigner ? 'Foreign Nationals' : 'Indian Nationals'}) on ${travelDate}.\n- Private 4x4 Jeep: ₹3,500\n- KFDC Passes: ₹${totalKfdc.toLocaleString('en-IN')}\n- Forest Entry: ₹${totalForest.toLocaleString('en-IN')}\n*Estimated Total: ₹${totalPrice.toLocaleString('en-IN')}*\nPlease confirm ticket & permit availability!`;
+
+  } else if (rateType === 'fixed') {
+    totalPrice = basePrice;
+    breakdownHtml = `<strong>${pkgName}</strong><br/>
+      Private 4x4 Jeep (${calcPaxCount} ${calcPaxCount === 1 ? 'Guest' : 'Guests'}, Max 6 / Jeep) • Fixed Vehicle Fare<br/>
+      <small style="color:var(--forest-400)">✓ Includes: Dedicated driver-guide, fuel, vehicle permit &amp; sightseeing</small>`;
+
+    waMsg = `Hi Thekkady Trips! I want to inquire about *${pkgName}* for ${calcPaxCount} people on ${travelDate} (Fixed Jeep Fare: ₹${basePrice.toLocaleString('en-IN')}). Please confirm booking!`;
+
+  } else {
+    // Per person activity
+    totalPrice = basePrice * calcPaxCount;
+    breakdownHtml = `<strong>${pkgName}</strong><br/>
+      ${calcPaxCount} × ₹${basePrice.toLocaleString('en-IN')} per person<br/>
+      <small style="color:var(--forest-400)">✓ Direct ticket &amp; slot booking assistance</small>`;
+
+    waMsg = `Hi Thekkady Trips! I want to book *${pkgName}* for ${calcPaxCount} people on ${travelDate} (Estimated Total: ₹${totalPrice.toLocaleString('en-IN')}). Please confirm slots!`;
+  }
+
   const formattedPrice = `₹${totalPrice.toLocaleString('en-IN')}`;
 
   if (totalEl) totalEl.textContent = formattedPrice;
-  if (breakdownEl) {
-    if (rateType === 'fixed') {
-      breakdownEl.innerHTML = `<strong>${pkgName}</strong><br/>Private Vehicle (${calcPaxCount} ${calcPaxCount === 1 ? 'Guest' : 'Guests'}, Max 6) • Fuel, driver &amp; tolls included`;
-    } else {
-      breakdownEl.innerHTML = `<strong>${pkgName}</strong><br/>${calcPaxCount} ${calcPaxCount === 1 ? 'Passenger' : 'Passengers'} • Forest permits &amp; fuel included`;
-    }
-  }
+  if (breakdownEl) breakdownEl.innerHTML = breakdownHtml;
 
   if (waBtn) {
-    const textMsg = `Hi! I want to inquire about ${pkgName} for ${calcPaxCount} people on ${travelDate} (Estimated Total: ${formattedPrice})`;
-    waBtn.href = `https://wa.me/917558876257?text=${encodeURIComponent(textMsg)}`;
+    const waUrl = `https://wa.me/917558876257?text=${encodeURIComponent(waMsg)}`;
+    waBtn.href = waUrl;
   }
 }
 
@@ -191,7 +259,10 @@ function openBookingModal(packageName) {
     }
   }
 
-  if (modal) modal.classList.add('open');
+  if (modal) {
+    modal.classList.add('active');   // CSS uses .active
+    document.body.style.overflow = 'hidden';  // prevent background scroll
+  }
 }
 
 function submitBookingModal(event) {
@@ -223,9 +294,9 @@ function submitBookingModal(event) {
   const message = lines.join('\n');
   const waUrl = `https://wa.me/917558876257?text=${encodeURIComponent(message)}`;
 
-  window.location.href = waUrl;
-  showToast('WhatsApp message prepared! Sending your inquiry...');
+  showToast('Opening WhatsApp... 🚀');
   closeModal('bookingModal');
+  redirectToWhatsApp(waUrl);
 }
 
 function submitQuickInquiry(event) {
@@ -240,26 +311,32 @@ function submitQuickInquiry(event) {
   const message = `Hi Thekkady Trips!\nName: ${name}\nPhone: ${phone}\nDate: ${date}\nService: ${service}${msg ? `\nNote: ${msg}` : ''}`;
   const waUrl = `https://wa.me/917558876257?text=${encodeURIComponent(message)}`;
 
-  window.location.href = waUrl;
   showToast('Opening WhatsApp... 🚀');
+  redirectToWhatsApp(waUrl);
   form.reset();
 }
 
 /* ─── GENERAL MODALS ────────────────────────────── */
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
-  if (modal) modal.classList.remove('open');
+  if (modal) {
+    modal.classList.remove('active');
+    modal.classList.remove('open');
+  }
+  document.body.style.overflow = '';  // restore scroll
 }
 
 function openModal(e, modalId) {
   if (e) e.preventDefault();
   const modal = document.getElementById(modalId);
-  if (modal) modal.classList.add('open');
+  if (modal) modal.classList.add('active');
 }
 
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('modal-overlay')) {
+    e.target.classList.remove('active');
     e.target.classList.remove('open');
+    document.body.style.overflow = '';
   }
 });
 
@@ -485,6 +562,11 @@ function initSpatialTilt() {
 function initApp() {
   initSpatialTilt();
   
+  // Init Safari Calculator
+  if (document.getElementById('calcPackage')) {
+    updateSafariCalculator();
+  }
+
   // Safe Image Error Handling & Fallback
   document.querySelectorAll('img').forEach(img => {
     img.addEventListener('error', function() {
