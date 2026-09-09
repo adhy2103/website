@@ -733,6 +733,7 @@
             <option value="thekkady-tn" data-price="4000" data-rate-type="fixed" data-name="Kerala &amp; Tamil Nadu Tour">Kerala &amp; Tamil Nadu Tour (₹4,000/jeep)</option>
             <option value="custom" data-price="3500" data-rate-type="fixed" data-name="Custom Full Day Safari Circuit">Custom Full Day Safari Circuit (from ₹3,500/jeep)</option>
             <option value="sathram" data-price="2500" data-rate-type="fixed" data-name="Sathram Highland Safari">Sathram Highland Safari (₹2,500/jeep)</option>
+            <option value="zipline" data-price="500" data-rate-type="pax" data-name="Sathram Flying Zip Line Adventure">Sathram Valley Flying Zip Line (₹500/person)</option>
             <option value="parunthumpara" data-price="2000" data-rate-type="fixed" data-name="Parunthumpara Eagle Rock Tour">Parunthumpara Eagle Rock Tour (₹2,000/jeep)</option>
             <option value="spice" data-price="200" data-rate-type="pax" data-name="Spice Plantation Guided Tour">Spice Plantation Guided Tour (₹200/person)</option>
             <option value="elephant" data-price="500" data-rate-type="pax" data-name="Elephant Safari &amp; Ride">Elephant Safari &amp; Ride (₹500/person)</option>
@@ -1246,63 +1247,66 @@
     <div class="section-header">
       <span class="section-tag">Accommodation</span>
       <h2 class="section-title">Comfortable <span class="accent">Stays</span> in Thekkady</h2>
-      <p class="section-sub">From budget rooms to luxurious forest cottages — wake up to the sounds of the jungle every morning</p>
+      <p class="section-sub">From authentic forest cottages to elevated treetop bamboo treehouses — wake up to the sounds of nature every morning</p>
     </div>
 
     <div class="stay-grid">
-      <div class="stay-card reveal" id="stay-budget">
+      <!-- 1. Periyar Wooden Cottage -->
+      <div class="stay-card reveal" id="stay-periyar">
         <div class="stay-img-wrap">
-          <img src="./assets/sathram_meadows.jpg" alt="Standard Forest Room Stay in Thekkady" class="stay-img w-full h-full object-cover" loading="lazy" />
-          <div class="stay-badge">Budget Friendly</div>
+          <img src="./assets/stay_cottage_periyar.jpg" alt="Periyar Heritage Wooden Forest Cottage Stay Thekkady" class="stay-img w-full h-full object-cover" loading="lazy" />
+          <div class="stay-badge stay-badge-popular">Top Rated</div>
         </div>
         <div class="stay-body">
-          <div class="stay-type">Budget Room</div>
-          <h3>Standard Forest Room</h3>
-          <p>Clean, comfortable rooms near Kumily forest edge — perfect for budget-conscious adventurers.</p>
+          <div class="stay-type">Wooden Cottage</div>
+          <h3>Periyar Forest Cottage</h3>
+          <p>Handcrafted wooden jungle cottage surrounded by lush bamboo groves, private sit-out veranda with wicker chairs, and peaceful wilderness ambiance.</p>
           <div class="stay-amenities">
-            <span>Double Bed</span><span>AC</span><span>Hot Water</span><span>Free WiFi</span>
+            <span>King Bed</span><span>Private Veranda</span><span>Hot Water</span><span>Free WiFi</span>
           </div>
           <div class="stay-footer">
-            <div class="stay-price">₹800–₹1,200<small>/night</small></div>
-            <button onclick="openBookingModal('Budget Room Stay')" class="btn btn-primary btn-sm">Book Room</button>
+            <div class="stay-price">₹1,800–₹2,800<small>/night</small></div>
+            <button onclick="openBookingModal('Periyar Forest Cottage')" class="btn btn-primary btn-sm">Book Cottage</button>
           </div>
         </div>
       </div>
 
-      <div class="stay-card reveal" id="stay-standard">
+      <!-- 2. Chinnar Garden Cottage -->
+      <div class="stay-card reveal" id="stay-chinnar">
         <div class="stay-img-wrap">
-          <img src="./assets/parunthumpara_valley_viewpoint.jpg" alt="Standard Valley View Room Thekkady" class="stay-img w-full h-full object-cover" loading="lazy" />
-          <div class="stay-badge stay-badge-popular">Most Chosen</div>
+          <img src="./assets/stay_cottage_chinnar.jpg" alt="Chinnar Jungle Garden Cottage Stay amidst Nature" class="stay-img w-full h-full object-cover" loading="lazy" />
+          <div class="stay-badge">Nature Retreat</div>
         </div>
         <div class="stay-body">
-          <div class="stay-type">Standard Room</div>
-          <h3>Valley View Room</h3>
-          <p>Spacious rooms with private balconies overlooking green tea valleys — perfect retreat after a day of adventure.</p>
+          <div class="stay-type">Garden Cottage</div>
+          <h3>Chinnar Jungle Cottage</h3>
+          <p>Charming independent forest cottage with private paved garden walkway, flowering shrubs, serene canopy shade, and quiet natural setting.</p>
           <div class="stay-amenities">
-            <span>King Bed</span><span>Balcony View</span><span>AC</span><span>Breakfast Included</span>
+            <span>Queen Bed</span><span>Garden Walkway</span><span>Air Cooling</span><span>Breakfast Included</span>
           </div>
           <div class="stay-footer">
-            <div class="stay-price">₹1,500–₹2,500<small>/night</small></div>
-            <button onclick="openBookingModal('Standard Valley View Room')" class="btn btn-primary btn-sm">Book Room</button>
+            <div class="stay-price">₹1,800–₹2,800<small>/night</small></div>
+            <button onclick="openBookingModal('Chinnar Jungle Cottage')" class="btn btn-primary btn-sm">Book Cottage</button>
           </div>
         </div>
       </div>
 
-      <div class="stay-card reveal" id="stay-luxury">
+      <!-- 3. Elevated Forest Treehouse -->
+      <div class="stay-card reveal" id="stay-treehouse">
         <div class="stay-img-wrap">
-          <img src="./assets/angamoozhy_canopy_viewpoint.jpg" alt="Private Forest Cottage Jacuzzi Stay" class="stay-img w-full h-full object-cover" loading="lazy" />
-          <div class="stay-badge stay-badge-luxury">Luxury</div>
+          <img src="./assets/stay_treehouse.jpg" alt="Elevated Bamboo Forest Treehouse Stay Thekkady" class="stay-img w-full h-full object-cover" loading="lazy" />
+          <div class="stay-badge stay-badge-luxury">Signature Experience</div>
         </div>
         <div class="stay-body">
-          <div class="stay-type">Luxury Cottage</div>
-          <h3>Private Forest Cottage</h3>
-          <p>Exclusive private cottage nestled in the forest — jacuzzi, private garden, butler service, and bonfire setup.</p>
+          <div class="stay-type">Treehouse Stay</div>
+          <h3>Elevated Forest Treehouse</h3>
+          <p>Spectacular high-canopy bamboo treehouse with rustic wooden suspension bridge, sweeping treetop panorama, fresh breeze, and night forest sounds.</p>
           <div class="stay-amenities">
-            <span>Jacuzzi</span><span>Private Garden</span><span>All Meals</span><span>Butler Service</span>
+            <span>Treetop Balcony</span><span>Bamboo Bridge</span><span>Canopy View</span><span>Campfire Available</span>
           </div>
           <div class="stay-footer">
-            <div class="stay-price">₹4,000–₹7,000<small>/night</small></div>
-            <button onclick="openBookingModal('Private Forest Cottage')" class="btn btn-accent btn-sm">Book Cottage</button>
+            <div class="stay-price">₹3,500–₹5,500<small>/night</small></div>
+            <button onclick="openBookingModal('Elevated Forest Treehouse')" class="btn btn-accent btn-sm">Book Treehouse</button>
           </div>
         </div>
       </div>
@@ -1772,6 +1776,7 @@
             <option value="Kerala &amp; Tamil Nadu Sightseeing (₹4,000/Jeep)">Kerala &amp; Tamil Nadu Sightseeing (₹4,000/Jeep)</option>
             <option value="Custom Full Day Safari Circuit (from ₹3,500/Jeep)">Custom Full Day Safari Circuit (From ₹3,500/Jeep)</option>
             <option value="Sathram Highland Safari (₹2,500/Jeep)">Sathram Highland Safari (₹2,500/Jeep)</option>
+            <option value="Sathram Valley Zip Line (₹500/pax)">Sathram Valley Zip Line Adventure (₹500/pax)</option>
             <option value="Parunthumpara Eagle Rock Tour (₹2,000/Jeep)">Parunthumpara Eagle Rock Tour (₹2,000/Jeep)</option>
             <option value="Spice Plantation Tour (₹200/pax)">Spice Plantation Guided Tour (₹200/pax)</option>
             <option value="Elephant Safari & Ride (Regular 15m - 1.5h)">Elephant Safari &amp; Ride (Regular 15m – 1.5h)</option>
@@ -1784,7 +1789,10 @@
             <option value="Live Magic & Illusion Show (₹300/pax)">Live Magic & Illusion Show (₹300/pax)</option>
             <option value="Romantic Kerala Honeymoon">Romantic Kerala Honeymoon</option>
             <option value="Kerala Family Holiday">Kerala Family Holiday</option>
-            <option value="Room & Cottage Stay">Room & Cottage Stay</option>
+            <option value="Room & Cottage Stay">Room & Cottage Stay (General Inquiry)</option>
+            <option value="Periyar Forest Cottage Stay">Periyar Forest Cottage (₹1,800–₹2,800/night)</option>
+            <option value="Chinnar Jungle Cottage Stay">Chinnar Jungle Cottage (₹1,800–₹2,800/night)</option>
+            <option value="Elevated Forest Treehouse Stay">Elevated Forest Treehouse (₹3,500–₹5,500/night)</option>
             <option value="Bike Rental">Bike Rental</option>
           </select>
         </div>
