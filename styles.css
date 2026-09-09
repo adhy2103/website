@@ -385,7 +385,7 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;  /* keep both branded jeeps fully in frame */
+  object-position: 60% center;  /* jeeps are right-of-center — show them + mountains */
   z-index: 1;
 }
 
@@ -394,7 +394,7 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
   inset: -8%;          /* oversized so zoom never clips */
   background-image: url('./assets/hero_main.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: 60% center;
   will-change: transform;
   animation: kenBurns 22s ease-in-out infinite alternate;
 }
@@ -2987,9 +2987,9 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
     justify-content: flex-start;
   }
 
-  /* ── Hero image — mobile framing for the two-jeep landscape shot ── */
+  /* ── Hero image — mobile framing for the tea plantation + jeep shot ── */
   .hero-bg-img {
-    object-position: 55% center;  /* nudge right to frame branded jeep on windscreen */
+    object-position: 70% 65%;  /* pan right+down: jeeps (right side) + mountain backdrop */
   }
 
   /* ── Stronger overlay on mobile — brighter image needs more contrast for text ── */
@@ -3173,7 +3173,7 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
 
   /* ── Hero image — tighter crop for narrow phones (360–430px portrait) ── */
   .hero-bg-img {
-    object-position: 60% center;  /* show the closer front jeep with Thekkady Trips logo */
+    object-position: 75% 70%;  /* tightly frame the two black jeeps against the mountain */
   }
 
   /* ── Overlay — maximum contrast on small screens ── */
@@ -3287,9 +3287,9 @@ input, select, textarea { font-family: inherit; box-sizing: border-box; max-widt
   .bento-card__body { padding: 12px; }
   .activity-card-body { padding: 12px; }
 
-  /* ── Hero image — ultra-narrow: focus tightly on the closer front jeep ── */
+  /* ── Hero image — ultra-narrow: focus on the jeeps + immediate mountain backdrop ── */
   .hero-bg-img {
-    object-position: 65% center;
+    object-position: 80% 72%;
   }
   /* ── Full-black bottom on smallest screens — text must always be readable ── */
   .hero-overlay {
