@@ -5,16 +5,19 @@
   <link rel="shortcut icon" href="./assets/logo.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thekkady Trips | 4x4 Jeep Safari &amp; Kerala Travel Partner — Kumily, Idukki</title>
-  <meta name="description" content="Official 4x4 Jeep Safari operator in Kumily, Thekkady, Idukki. Gavi forest safaris, Parumpara off-road trails, Sathram border trekking, room stays, bike rentals, &amp; Kerala tours." />
-  <meta name="keywords" content="Thekkady Jeep Safari, Gavi Safari Booking, Idukki Off-Road Safari, Kumily Jeep Tour, Periyar Wildlife Safari, Kerala Travel Agency, Bike Rental Thekkady" />
+  <title>Thekkady Jeep Safari & Gavi Eco-Tourism Booking | Kumily 4x4 Tours — Thekkady Trips</title>
+  <meta name="description" content="Book Gavi eco-tourism jeep safari directly with Kumily's licensed 4x4 fleet — no hotel broker commissions. KFDC-cleared routes, private Mahindra Thar jeeps, Sathram highland, Parunthumpara & custom Idukki off-road circuits." />
+  <meta name="keywords" content="Thekkady Jeep Safari, Gavi Safari Booking, Idukki Off-Road Safari, Kumily Jeep Tour, Periyar Wildlife Safari, Kerala Travel Agency, Bike Rental Thekkady, KFDC Safari" />
   <link rel="canonical" href="https://thekkadytrips.com/" />
+
+  <!-- LCP Preload — Hero Image -->
+  <link rel="preload" fetchpriority="high" as="image" href="./assets/hero_main.jpg" type="image/jpeg" />
 
   <!-- Open Graph / WhatsApp Sharing Meta Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thekkadytrips.com/" />
   <meta property="og:title" content="Thekkady Trips | Premier 4x4 Jeep Safaris &amp; Kerala Tours" />
-  <meta property="og:description" content="Explore Idukki's wildest off-road jungle trails. Gavi safaris, Sathram trekking, stay, bike rentals &amp; custom Kerala tour packages." />
+  <meta property="og:description" content="Direct local 4x4 fleet — no broker markup. Gavi KFDC safaris, Sathram highland, Parunthumpara Eagle Rock, room stays, bike rentals &amp; custom Kerala tour packages from Kumily." />
   <meta property="og:image" content="https://thekkadytrips.com/assets/hero_bg.png" />
   <meta property="og:image:alt" content="Thekkady Trips - 4x4 Jeep Safari through misty Idukki jungle forest, Kerala" />
   <meta property="og:image:width" content="1200" />
@@ -24,7 +27,7 @@
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Thekkady Trips | 4x4 Jeep Safari &amp; Kerala Tours" />
-  <meta name="twitter:description" content="Official 4x4 Jeep Safari operator in Thekkady, Idukki. Book Gavi, Parumpara, Sathram safaris via WhatsApp." />
+  <meta name="twitter:description" content="Official licensed 4x4 Jeep Safari operator in Thekkady, Idukki — direct, no broker. Book Gavi, Sathram, Parunthumpara safaris via WhatsApp." />
   <meta name="twitter:image" content="https://thekkadytrips.com/assets/hero_bg.png" />
   <meta name="twitter:image:alt" content="Thekkady Trips - 4x4 Jeep Safari in Idukki, Kerala" />
 
@@ -40,12 +43,13 @@
     "@context": "https://schema.org",
     "@type": "TravelAgency",
     "name": "Thekkady Trips",
-    "image": "./assets/logo.png",
+    "image": "https://thekkadytrips.com/assets/logo.png",
     "@id": "https://thekkadytrips.com/#agency",
     "url": "https://thekkadytrips.com/",
     "telephone": "+917558876257",
     "email": "bookings@thekkadytrips.com",
-    "priceRange": "₹1500 - ₹28000",
+    "priceRange": "₹₹",
+    "description": "Licensed 4x4 jeep safari operator in Kumily, Idukki. Direct fleet — no hotel broker commissions. Gavi KFDC eco-tourism, Sathram highland, Parunthumpara Eagle Rock & custom off-road circuits.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Main Road, Kumily",
@@ -56,14 +60,25 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 9.597,
-      "longitude": 77.170
+      "latitude": 9.6067,
+      "longitude": 77.1685
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       "opens": "05:00",
       "closes": "21:00"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Safari & Tour Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "TouristTrip", "name": "Gavi Eco-Tourism Jeep Safari", "description": "Full-day KFDC eco-tourism safari through Periyar Tiger Reserve — 80km, wildlife, boating, breakfast & lunch"}, "price": "3500", "priceCurrency": "INR"},
+        {"@type": "Offer", "itemOffered": {"@type": "TouristTrip", "name": "Sathram Highland Safari", "description": "High-altitude border ridge safari with 360° views of Tamil Nadu plains, wild bison corridors and tea estates"}, "price": "2500", "priceCurrency": "INR"},
+        {"@type": "Offer", "itemOffered": {"@type": "TouristTrip", "name": "Parunthumpara Eagle Rock Tour", "description": "Sunset cliff safari to Kerala's iconic Eagle Rock with panoramic Western Ghats valley views"}, "price": "2000", "priceCurrency": "INR"},
+        {"@type": "Offer", "itemOffered": {"@type": "TouristTrip", "name": "Angamoozhy 4x4 Off-Road Circuit", "description": "Extreme off-road mud tracks, river crossings and remote forest settlements"}, "price": "8000", "priceCurrency": "INR"},
+        {"@type": "Offer", "itemOffered": {"@type": "TouristTrip", "name": "Idukki Dam Full Day Package", "description": "6-stop full-day circuit including Asia's largest arch dam walk and reservoir boating"}, "price": "8000", "priceCurrency": "INR"}
+      ]
     },
     "sameAs": [
       "https://wa.me/917558876257",
@@ -88,13 +103,12 @@
 
     <nav class="nav-links" id="navLinks">
       <a href="#safari-packages" class="nav-link">Safaris</a>
+      <a href="#safari-comparison" class="nav-link">Compare</a>
       <a href="#activities" class="nav-link">Activities</a>
-      <a href="#evening-shows" class="nav-link">Evening Shows</a>
-      <a href="#gallery" class="nav-link">Gallery</a>
-      <a href="#special-packages" class="nav-link">Packages</a>
-      <a href="#stay" class="nav-link">Stay & Bikes</a>
-      <a href="#kerala-tours" class="nav-link">Kerala Tours</a>
-      <a href="#highlights" class="nav-link">About Us</a>
+      <a href="#evening-shows" class="nav-link">Shows</a>
+      <a href="#stay" class="nav-link">Stays</a>
+      <a href="#wildlife-dossier" class="nav-link">Wildlife</a>
+      <a href="#safari-faq" class="nav-link">FAQ</a>
       <a href="#contact" class="nav-link">Contact</a>
       <div class="mobile-only-cta">
         <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20inquire%20about%20a%20Safari%20booking." target="_blank" rel="noopener" class="btn btn-whatsapp btn-full">
@@ -122,8 +136,8 @@
 
 <!-- ═══════════════HERO SECTION ═══════════════-->
 <section class="hero" id="hero">
-  <!-- Full-width responsive hero image -->
-  <img src="./assets/hero_main.jpg" alt="Two Black Mahindra 4x4 Jeeps on Munnar Tea Plantation Trail at Golden Sunrise — Thekkady Trips Safari" class="w-full h-full object-cover hero-bg-img" />
+  <!-- Full-width responsive hero image — Ken Burns zoom effect -->
+  <img src="./assets/hero_main.jpg" alt="Two Black Mahindra 4x4 Jeeps on Munnar Tea Plantation Trail at Golden Sunrise — Thekkady Trips Safari" class="w-full h-full object-cover hero-bg-img hero-ken-burns" width="1920" height="1080" />
 
   <!-- Dark gradient overlay for text readability -->
   <div class="hero-overlay"></div>
@@ -135,52 +149,51 @@
         <img src="./assets/logo.png" alt="Thekkady Trips Official Logo Badge" class="hero-logo-img" />
       </div>
 
-      <div class="live-ticker animate-fade-up">
-        <span class="ticker-dot"></span>
-        <span>14 Safaris Booked Today &bull; Certified Idukki 4x4 Drivers Ready</span>
+      <div class="hero-dispatch-banner animate-fade-up">
+        <span class="hero-dispatch-pulse radar-ping"></span>
+        <span>Kumily Base Dispatch Active &bull; Limited Daily Gavi Quota &bull; Direct Driver Allocation</span>
       </div>
 
       <h1 class="hero-title animate-fade-up delay-1">
-        Explore <span class="hero-accent">Idukki's Wildest</span><br/>Off-Road Jungle Trails
+        Experience <span class="hero-accent">Unfiltered Idukki</span><br/>Raw 4x4 Off-Road Safaris
       </h1>
 
       <p class="hero-sub animate-fade-up delay-2">
-        Based in Kumily, Idukki &mdash; We specialize in 4x4 Jeep Safaris across Gavi, Sathram, Vagamon, Ramakkalmedu &amp; Anchuruli.<br/>
-        Official forest entry permit assistance, room stays, bike rentals, and custom Kerala tours.
+        Venture deep beyond regular tourist boundaries. We are Kumily’s licensed native fleet operators — navigating the restricted rain mist of <strong>Gavi</strong>, the wild bison ridges of <strong>Sathram</strong>, roaring river crossings, and silent cardamom valleys in rugged 4WD Jeeps.
       </p>
 
       <div class="hero-services-pills animate-fade-up delay-2">
         <span class="pill pill-primary">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m16 10-4 4-2-2"/></svg>
-          4x4 Jeep Safaris
+          Private 4x4 Jeeps (No Strangers)
         </span>
         <span class="pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          Gavi &amp; Sathram
+          Gavi &amp; Sathram Circuits
         </span>
         <span class="pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Idukki Stays
+          Forest Cottages &amp; Treehouses
         </span>
         <span class="pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
-          Bike Rentals
+          Mountain Bike Rentals
         </span>
       </div>
 
       <div class="hero-actions animate-fade-up delay-3">
         <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20plan%20my%20Jeep%20Safari%20in%20Thekkady." target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg pulse-glow" id="heroWhatsapp">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          <span>Plan My Safari via WhatsApp</span>
+          <span>Check Availability &amp; Plan Safari</span>
         </a>
-        <button type="button" onclick="openBookingModal('General Safari Inquiry')" class="btn btn-outline btn-lg">Quick Quote</button>
-        <a href="#safari-packages" class="btn btn-outline btn-lg">Explore Circuits</a>
+        <button type="button" onclick="openBookingModal('General Safari Inquiry')" class="btn btn-outline btn-lg">Instant Quote</button>
+        <a href="#safari-comparison" class="btn btn-outline btn-lg">Compare All Safaris</a>
       </div>
 
       <!-- Trust Stats Bar -->
       <div class="hero-stats animate-fade-up delay-4">
         <div class="stat-item">
-          <span class="stat-num">10+ Years</span>
+          <span class="stat-num counter-val" data-count="10" data-suffix="+ Years">10+ Years</span>
           <span class="stat-label">Local 4x4 Drivers</span>
         </div>
         <div class="stat-divider"></div>
@@ -190,7 +203,7 @@
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-num">4.9 ★</span>
+          <span class="stat-num counter-val" data-count="4.9" data-suffix=" ★" data-decimals="1">4.9 ★</span>
           <span class="stat-label">Guest Rating</span>
         </div>
       </div>
@@ -357,6 +370,63 @@
   </div>
 </section>
 
+<!-- ═══════════════THE GOLD STANDARD OF IDUKKI SAFARIS (4 PILLARS) ═══════════════-->
+<section class="gold-standard-section" id="gold-standard">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">The Native Advantage</span>
+      <h2 class="section-title">The Gold Standard of <span class="accent">Idukki 4x4 Safaris</span></h2>
+      <p class="section-sub">Why savvy travelers bypass hotel broker desks and ride directly with Kumily's licensed mountain pilots</p>
+    </div>
+
+    <div class="gold-pillars-grid">
+      <!-- Pillar 1 -->
+      <div class="gold-pillar-card reveal">
+        <span class="pillar-number">01</span>
+        <div class="pillar-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Private Heavy-Duty 4WD Fleet</h3>
+        <p>Specially outfitted Mahindra Thar &amp; 4WD mountain jeeps with all-terrain suspension, high-traction tires, and roll bars. Your vehicle is strictly private for you and your group — zero strangers.</p>
+        <span class="pillar-badge">100% Private Jeeps</span>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="gold-pillar-card reveal">
+        <span class="pillar-number">02</span>
+        <div class="pillar-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        </div>
+        <h3>Native Idukki Forest Pilots</h3>
+        <p>Born and raised in Kumily's high ranges with 10+ to 25+ years of rough terrain driving. They track wildlife movements instinctively and navigate misty hairpin passes with unmatched finesse.</p>
+        <span class="pillar-badge">10+ Yrs Native Experience</span>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="gold-pillar-card reveal">
+        <span class="pillar-number">03</span>
+        <div class="pillar-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Official Forest Clearance Priority</h3>
+        <p>Gavi and reserve circuits have strict daily vehicle quotas. Our base office coordinates directly with the Kerala Forest Department (KFDC &amp; RFO Kumily) for seamless permit clearance with zero delays.</p>
+        <span class="pillar-badge">Verified KFDC Liaison</span>
+      </div>
+
+      <!-- Pillar 4 -->
+      <div class="gold-pillar-card reveal">
+        <span class="pillar-number">04</span>
+        <div class="pillar-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/></svg>
+        </div>
+        <h3>Zero Tourist Traps &amp; Pure Flexibility</h3>
+        <p>No forced stops at commission-heavy gift shops. Stop whenever you wish for wildlife photography, cloud-gazing at hidden viewpoints, or hot cardamom tea at secluded hill huts.</p>
+        <span class="pillar-badge">100% Tailored Pace</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════SAFARI CIRCUITS — SPATIAL BENTO GRID ═══════════════-->
 <section class="section bento-safari-section" id="safari-packages">
 
@@ -387,6 +457,10 @@
           <div class="bento-floating-tag bento-floating-tag--gold">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             #1 Most Popular
+          </div>
+          <div class="bento-scarcity-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Strict Daily Forest Quota – Early Booking Advised
           </div>
           <div class="bento-badge-group">
             <span class="bento-meta-badge">
@@ -434,6 +508,7 @@
               </a>
             </div>
           </div>
+        </div>
       </article>
 
       <!-- ── CARD 2: SATHRAM ── -->
@@ -462,6 +537,10 @@
             <li>
               <span class="bento-bullet-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
               <span>Wild bison &amp; elephant corridor observation points</span>
+            </li>
+            <li>
+              <span class="bento-bullet-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Optional Sathram Valley Flying Zip Line add-on (₹500/head)</span>
             </li>
           </ul>
           <div class="bento-card__footer">
@@ -711,6 +790,202 @@
 
     </div><!-- /.bento-grid -->
   </div><!-- /.container -->
+</section>
+
+<!-- ═══════════════SAFARI CIRCUIT COMPARISON MATRIX ═══════════════-->
+<section class="matrix-section" id="safari-comparison">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Full Circuit Clarity</span>
+      <h2 class="section-title">Safari Circuit <span class="accent">Comparison Matrix</span></h2>
+      <p class="section-sub">Compare all 6 official Idukki off-road routes side-by-side to select the ideal experience for your group</p>
+    </div>
+
+    <div class="matrix-table-container reveal">
+      <table class="safari-matrix-table" aria-label="Safari circuits comparison table">
+        <thead>
+          <tr>
+            <th>Circuit &amp; Altitude</th>
+            <th>Duration &amp; Slot</th>
+            <th>Off-Road Intensity</th>
+            <th>Wildlife Probability</th>
+            <th>Signature Highlights</th>
+            <th>Tariff Breakdown</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1: Gavi -->
+          <tr>
+            <td>
+              <span class="matrix-circuit-name">Gavi Eco-Tourism Safari</span>
+              <span class="matrix-circuit-sub">Elevation: ~3,400 ft · Periyar Buffer</span>
+            </td>
+            <td>
+              <strong style="color:var(--text-primary);">8–10 Hours</strong><br/>
+              <small>05:30 AM Early Dawn</small>
+            </td>
+            <td>
+              <span class="matrix-tag matrix-tag-green">Moderate Forest Trail</span>
+            </td>
+            <td>
+              <strong style="color:#34d399;">94% Very High</strong><br/>
+              <small>Elephants, Gaurs, Hornbills</small>
+            </td>
+            <td>
+              KFDC Forest Boating, Buffet Breakfast &amp; Lunch, Sabarimala View, Museum Trek
+            </td>
+            <td class="matrix-price-col">
+              ₹2,065 <small>KFDC/pax + ₹3,500 Jeep</small>
+            </td>
+            <td>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20the%20Gavi%20Eco-Tourism%20Safari." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp" style="white-space:nowrap;">Book Gavi</a>
+            </td>
+          </tr>
+
+          <!-- Row 2: Sathram -->
+          <tr>
+            <td>
+              <span class="matrix-circuit-name">Sathram Highland Safari</span>
+              <span class="matrix-circuit-sub">Elevation: ~3,250 ft · Border Ridge</span>
+            </td>
+            <td>
+              <strong style="color:var(--text-primary);">4–5 Hours</strong><br/>
+              <small>05:30 AM or 02:30 PM</small>
+            </td>
+            <td>
+              <span class="matrix-tag matrix-tag-gold">Steep High-Ridge 4x4</span>
+            </td>
+            <td>
+              <strong style="color:#fbbf24;">85% High</strong><br/>
+              <small>Wild Bison (Indian Gaur) Corridors</small>
+            </td>
+            <td>
+              360° Border Cliff Edge, Tea Valleys, Optional Valley Zip Line (₹500/head)
+            </td>
+            <td class="matrix-price-col">
+              ₹2,500 <small>Fixed Private Jeep (Max 6)</small>
+            </td>
+            <td>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20the%20Sathram%20Highland%20Safari." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp" style="white-space:nowrap;">Book Sathram</a>
+            </td>
+          </tr>
+
+          <!-- Row 3: Parunthumpara -->
+          <tr>
+            <td>
+              <span class="matrix-circuit-name">Parunthumpara Eagle Rock</span>
+              <span class="matrix-circuit-sub">Elevation: ~3,800 ft · Peerumedu Hills</span>
+            </td>
+            <td>
+              <strong style="color:var(--text-primary);">4–5 Hours</strong><br/>
+              <small>02:30 PM Golden Sunset</small>
+            </td>
+            <td>
+              <span class="matrix-tag matrix-tag-teal">Smooth Ghat Ride</span>
+            </td>
+            <td>
+              <strong style="color:#2dd4bf;">60% Moderate</strong><br/>
+              <small>Highland Birds, Grazing Herds</small>
+            </td>
+            <td>
+              Epic Soaring Eagle Rock Ravines, Endless Cloud Sea, Golden Hour Photography
+            </td>
+            <td class="matrix-price-col">
+              ₹2,000 <small>Fixed Private Jeep (Max 6)</small>
+            </td>
+            <td>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20the%20Parunthumpara%20Sunset%20Tour." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp" style="white-space:nowrap;">Book Sunset</a>
+            </td>
+          </tr>
+
+          <!-- Row 4: Angamoozhy -->
+          <tr>
+            <td>
+              <span class="matrix-circuit-name">Angamoozhy 4x4 Off-Road</span>
+              <span class="matrix-circuit-sub">Elevation: ~2,900 ft · Raw Forest River</span>
+            </td>
+            <td>
+              <strong style="color:var(--text-primary);">6–8 Hours</strong><br/>
+              <small>06:00 AM Departure</small>
+            </td>
+            <td>
+              <span class="matrix-tag matrix-tag-red">Extreme Mud &amp; Boulders</span>
+            </td>
+            <td>
+              <strong style="color:#fbbf24;">75% Forest Species</strong><br/>
+              <small>River Otters, Hornbills, Macaques</small>
+            </td>
+            <td>
+              Deep Natural Stream Crossings, Severe Mud Inclines, Remote Forest Hamlet Views
+            </td>
+            <td class="matrix-price-col">
+              ₹8,000 <small>Heavy 4x4 Thar/Bolero</small>
+            </td>
+            <td>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20the%20Angamoozhy%20Extreme%20Circuit." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp" style="white-space:nowrap;">Book Extreme</a>
+            </td>
+          </tr>
+
+          <!-- Row 5: Kerala & TN -->
+          <tr>
+            <td>
+              <span class="matrix-circuit-name">Kerala &amp; Tamil Nadu Tour</span>
+              <span class="matrix-circuit-sub">Elevation: 1,200–3,100 ft · 2 States</span>
+            </td>
+            <td>
+              <strong style="color:var(--text-primary);">4 Hours</strong><br/>
+              <small>Flexible Morning / Noon</small>
+            </td>
+            <td>
+              <span class="matrix-tag matrix-tag-teal">Comfort Scenic Drive</span>
+            </td>
+            <td>
+              <strong style="color:#2dd4bf;">50% Farmland Nature</strong><br/>
+              <small>Countryside Birds, Orchards</small>
+            </td>
+            <td>
+              Ottakathalamedu Watch Tower 360°, Huge Penstock Water Pipe, Cumbum Grape Farms
+            </td>
+            <td class="matrix-price-col">
+              ₹4,000 <small>Private Jeep (Max 6)</small>
+            </td>
+            <td>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20the%20Kerala%20TN%20Sightseeing%20Tour." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp" style="white-space:nowrap;">Book Tour</a>
+            </td>
+          </tr>
+
+          <!-- Row 6: Idukki Dam -->
+          <tr>
+            <td>
+              <span class="matrix-circuit-name">Idukki Dam Full Day (6 Spots)</span>
+              <span class="matrix-circuit-sub">Elevation: 2,500–3,500 ft · High Range</span>
+            </td>
+            <td>
+              <strong style="color:var(--text-primary);">8–9 Hours</strong><br/>
+              <small>08:00 AM Full Day</small>
+            </td>
+            <td>
+              <span class="matrix-tag matrix-tag-green">Mountain Ghat Highway</span>
+            </td>
+            <td>
+              <strong style="color:#34d399;">70% Lakeside Fauna</strong><br/>
+              <small>Wild Elephants at Reservoir Bank</small>
+            </td>
+            <td>
+              Asia’s Largest Arch Dam walk, Calvary Mount 360°, Anchuruli Tunnel, Reservoir Boating
+            </td>
+            <td class="matrix-price-col">
+              ₹8,000 <small>Full Day Vehicle (Max 6)</small>
+            </td>
+            <td>
+              <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20the%20Idukki%20Dam%20Full%20Day%20Package." target="_blank" rel="noopener" class="btn btn-xs btn-whatsapp" style="white-space:nowrap;">Book Dam</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════INTERACTIVE SAFARI COST CALCULATOR ═══════════════-->
@@ -1134,6 +1409,98 @@
   </div>
 </section>
 
+<!-- ═══════════════LOCAL WILDLIFE & SHOLA FOREST INTELLIGENCE DOSSIER ═══════════════-->
+<section class="wildlife-section" id="wildlife-dossier">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Forest Dossier</span>
+      <h2 class="section-title">Thekkady <span class="accent">Wildlife Intelligence</span></h2>
+      <p class="section-sub">Learn what lives in our backyard — native tracking insights from drivers who share these ancient forests daily</p>
+    </div>
+
+    <div class="wildlife-grid">
+      <!-- Card 1: Wild Elephant -->
+      <div class="wildlife-card reveal">
+        <div class="wildlife-media">
+          <img src="./assets/gavi_wild_elephant.jpg" alt="Wild Asian Elephant in Periyar Tiger Reserve Corridor" loading="lazy" />
+          <span class="wildlife-badge">Gavi Reservoir Herds</span>
+        </div>
+        <div class="wildlife-body">
+          <span class="wildlife-malayalam-name">Kaattana (Wild Elephant)</span>
+          <h3>Wild Asian Elephant</h3>
+          <p>Revered gentle giants roaming in family herds across the deep Periyar river corridors, bamboo thickets, and undisturbed freshwater pools of Gavi.</p>
+          <div class="wildlife-tracking-tip">
+            <strong>Driver Tracking Tip:</strong> Highest encounter rate between <strong>05:45 AM – 08:30 AM</strong> near natural salt licks along the Kochu Pampa stream.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Indian Gaur -->
+      <div class="wildlife-card reveal">
+        <div class="wildlife-media">
+          <img src="./assets/sathram_green_hills.jpg" alt="Indian Gaur Feeding Valley on Sathram Border Ridge" loading="lazy" />
+          <span class="wildlife-badge">Sathram Highland Corridors</span>
+        </div>
+        <div class="wildlife-body">
+          <span class="wildlife-malayalam-name">Kaattu Pothu (Indian Gaur)</span>
+          <h3>Indian Gaur (Wild Bison)</h3>
+          <p>Massive, muscular highland bovines with distinctive pale stockings. Often seen grazing peacefully in herds along high-altitude cliff meadows of Sathram.</p>
+          <div class="wildlife-tracking-tip">
+            <strong>Driver Tracking Tip:</strong> <strong>85%+ sighting rate</strong> along the Sathram border ridge during early morning dew and afternoon golden hour.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Canopy Primates -->
+      <div class="wildlife-card reveal">
+        <div class="wildlife-media">
+          <img src="./assets/spice_plantation_walk.jpg" alt="Dense Canopy Habitat for Nilgiri Langur and Giant Squirrel" loading="lazy" />
+          <span class="wildlife-badge">Shola Canopy Endemic</span>
+        </div>
+        <div class="wildlife-body">
+          <span class="wildlife-malayalam-name">Kariyili &amp; Malayanman</span>
+          <h3>Nilgiri Langur &amp; Giant Squirrel</h3>
+          <p>Glossy black primates with golden-brown manes and vibrant rainbow-hued Malabar Giant Squirrels leaping across 100-foot evergreen tree canopies.</p>
+          <div class="wildlife-tracking-tip">
+            <strong>Driver Tracking Tip:</strong> Listen for distinctive barking alarm calls and heavy canopy rustling during mid-morning forest drives.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Hornbills & Avians -->
+      <div class="wildlife-card reveal">
+        <div class="wildlife-media">
+          <img src="./assets/angamoozhy_canopy_viewpoint.jpg" alt="High Canopy Shola Habitat for Western Ghats Hornbills" loading="lazy" />
+          <span class="wildlife-badge">Kerala State Bird</span>
+        </div>
+        <div class="wildlife-body">
+          <span class="wildlife-malayalam-name">Vezhambal (Great Hornbill)</span>
+          <h3>Great Indian Hornbill &amp; Birds</h3>
+          <p>Magnificent prehistoric-looking birds with giant golden-yellow casques, gliding silently over deep jungle valleys alongside emerald doves and trogons.</p>
+          <div class="wildlife-tracking-tip">
+            <strong>Driver Tracking Tip:</strong> Frequent flyers around fruiting wild fig trees along the Gavi &amp; Angamoozhy forest roads from Nov to May.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ethical Observation Banner -->
+    <div class="ethical-safari-banner reveal">
+      <div class="ethical-content">
+        <h4>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Our Native Ethical Safari Protocol
+        </h4>
+        <p>We believe in responsible wildlife observation. Our vehicles strictly adhere to a zero-plastic zone, zero-honking policy, and minimum 50-meter wildlife distance rules. We observe nature in its purest wild state without intrusion or disturbance.</p>
+      </div>
+      <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20know%20more%20about%20wildlife%20safari%20seasons%20in%20Thekkady." target="_blank" rel="noopener" class="btn btn-whatsapp" style="white-space: nowrap;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span>Ask Wildlife Specialist</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════SPECIAL TOUR PACKAGES ═══════════════-->
 <section class="section special-section" id="special-packages">
   <div class="container">
@@ -1448,6 +1815,85 @@
   </div>
 </section>
 
+<!-- ═══════════════DIRECT LOCAL FLEET VS HOTEL BROKERS TRANSPARENCY ═══════════════-->
+<section class="transparency-section" id="transparency">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Booking Transparency</span>
+      <h2 class="section-title">Direct Local Fleet vs. <span class="accent">Hotel Brokers</span></h2>
+      <p class="section-sub">Why booking directly with Kumily's licensed fleet owners gives you total safety, private comfort, and authentic pricing</p>
+    </div>
+
+    <div class="transparency-grid">
+      <!-- Card 1: Direct with Thekkady Trips -->
+      <div class="transparency-card transparency-card--direct reveal">
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#10b981;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Direct with Thekkady Trips
+        </h3>
+        <p class="transparency-sub">Licensed Kumily Fleet Operator &bull; Registered Office Main Road</p>
+        <ul class="transparency-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-good"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>100% Private 4x4 Jeep Guarantee:</strong> Your vehicle is strictly reserved for your family or group — never packed with strangers.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-good"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Zero Broker Commissions:</strong> Direct operator pricing saves ₹1,500 to ₹3,000 per jeep compared to hotel travel desk markups.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-good"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Veteran Native Mountain Pilots:</strong> Drivers with 10+ to 25+ years traversing steep ghats, mud tracks, and elephant crossings safely.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-good"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Direct KFDC Permit Clearance:</strong> We submit passes directly at the Kumily Forest Department office — zero booking uncertainty.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-good"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>100% Flexible Stoppages:</strong> Linger at panoramic viewpoints, pause for wildlife photos, or sip cardamom tea at your own pace.</span>
+          </li>
+        </ul>
+        <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20a%20private%20safari%20directly%20with%20your%20fleet." target="_blank" rel="noopener" class="btn btn-whatsapp btn-full">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Book Direct on WhatsApp (Zero Commission)</span>
+        </a>
+      </div>
+
+      <!-- Card 2: Hotel Desks & Street Brokers -->
+      <div class="transparency-card transparency-card--broker reveal">
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#ef4444;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          Hotel Desks &amp; Street Brokers
+        </h3>
+        <p class="transparency-sub">Commission Middlemen &bull; Subcontracted Third-Party Vehicles</p>
+        <ul class="transparency-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-bad"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span><strong>Crammed Shared Seating:</strong> Strangers squeezed together with mismatched schedules and compromised privacy.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-bad"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span><strong>30% to 50% Inflated Markups:</strong> You pay heavy middleman commissions that do not go towards your safari vehicle or experience.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-bad"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span><strong>Unknown Hired Drivers:</strong> Often subcontracted to temporary city drivers unfamiliar with difficult off-road hazards.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-bad"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span><strong>Forced Commercial Outlets:</strong> Rushed sightseeing to divert you to commercial gift shops to generate broker cuts.</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="t-icon-bad"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span><strong>High Refund Friction:</strong> If weather or gate permits close, middleman chains make refunds tedious and delayed.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════WHY CHOOSE LOCAL DRIVERS (TRUST & LEGITIMACY) ═══════════════-->
 <section class="section highlights-section" id="highlights">
   <div class="highlights-bg"></div>
@@ -1465,7 +1911,7 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
           </div>
         </div>
-        <h3>Born & Raised in Idukki</h3>
+        <h3>Born &amp; Raised in Idukki</h3>
         <p>Our driver-guides are local Idukki natives who know the forest paths, seasonal wildlife moves, and secret viewpoints like the back of their hand.</p>
       </div>
 
@@ -1477,7 +1923,9 @@
         </div>
         <h3>4x4 Off-Road Certified Vehicles</h3>
         <p>Heavy-duty, safety-inspected 4x4 Jeeps equipped with all-terrain tires, roll bars, and emergency searchlights for maximum safety.</p>
-          <div class="highlight-card reveal">
+      </div>
+
+      <div class="highlight-card reveal">
         <div class="hl-icon-wrap">
           <div class="hl-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -1571,6 +2019,370 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
         <span>Join 1,200+ Happy Travellers &mdash; Book Now</span>
       </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════NATIVE SAFARI FAQ ACCORDION ═══════════════-->
+<section class="faq-section-upgraded" id="safari-faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Essential Travel Intel</span>
+      <h2 class="section-title">Everything You Need <span class="accent">To Know</span></h2>
+      <p class="section-sub">Direct answers from our Kumily operations desk regarding permits, child safety, seasonal timings &amp; booking policies</p>
+    </div>
+
+    <div class="native-faq-grid">
+      <!-- FAQ 1: Gavi Quota & Advance Booking -->
+      <div class="native-faq-card reveal">
+        <button class="native-faq-header" onclick="toggleNativeFaq(this)" aria-expanded="false">
+          <span>How does the Gavi safari permit quota work &amp; how early should we book?</span>
+          <span class="native-faq-icon">+</span>
+        </button>
+        <div class="native-faq-body">
+          <div class="native-faq-content">
+            The Kerala Forest Development Corporation (KFDC) strictly limits entry to approximately <strong>30 private vehicles per day</strong> into Gavi's protected core zone to safeguard wildlife corridors. Permits sell out days or weeks in advance during peak season (Oct–May) and weekends. We strongly recommend reserving your slot at least <strong>3 to 7 days prior</strong> via our Kumily desk so we can secure your vehicle pass, driver entry, and official meal vouchers without last-minute disappointment.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2: Gavi Fee Structure Breakdown -->
+      <div class="native-faq-card reveal">
+        <button class="native-faq-header" onclick="toggleNativeFaq(this)" aria-expanded="false">
+          <span>What is the exact price breakdown for the Gavi Safari?</span>
+          <span class="native-faq-icon">+</span>
+        </button>
+        <div class="native-faq-body">
+          <div class="native-faq-content">
+            Gavi eco-tourism has two components:
+            <br/>1. <strong>Private 4x4 Jeep Tariff (₹3,500/jeep)</strong>: Dedicated vehicle, experienced mountain driver, fuel, and hotel pickup/drop in Kumily.
+            <br/>2. <strong>KFDC Eco-Tourism Pass (₹2,065/person)</strong>: Official forest entry permit, reservoir row-boating, guided forest museum walk, hot buffet breakfast, and authentic Kerala vegetarian buffet lunch at the forest canteen.
+            <br/><em>Note: Mandatory Forest Entry Pass is ₹45 for Indian Nationals and ₹500 for Foreign Nationals per head.</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3: Safety for Seniors & Children -->
+      <div class="native-faq-card reveal">
+        <button class="native-faq-header" onclick="toggleNativeFaq(this)" aria-expanded="false">
+          <span>Are 4x4 Jeeps safe &amp; comfortable for children, elders, or pregnant guests?</span>
+          <span class="native-faq-icon">+</span>
+        </button>
+        <div class="native-faq-body">
+          <div class="native-faq-content">
+            Yes! All our fleet vehicles are heavy-duty, safety-inspected 4x4 Mahindra Jeeps with reinforced roll cages, cushioned seats, seatbelts, and rainproof overhead canopies. Our native drivers practice careful, defensive mountain driving. For families traveling with seniors or young children, circuits like <strong>Sathram Highland</strong> and <strong>Parunthumpara</strong> offer smooth, gentle high-range cruising. If you prefer a slow, scenic pace without extreme bumps, just inform your driver upon boarding.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4: Sathram Zip Line Details -->
+      <div class="native-faq-card reveal">
+        <button class="native-faq-header" onclick="toggleNativeFaq(this)" aria-expanded="false">
+          <span>Can we do the Flying Zip Line during the Sathram Jeep Safari?</span>
+          <span class="native-faq-icon">+</span>
+        </button>
+        <div class="native-faq-body">
+          <div class="native-faq-content">
+            Yes, absolutely! The <strong>Sathram Valley Flying Zip Line is ₹500 per head</strong> and is located directly along our scenic safari route. Your private jeep driver will pause the tour at the adventure spot so your group can experience the exhilarating tandem or solo zip line flight over the lush canopy before continuing up to the high mountain border viewpoints. Full safety harnesses and certified helmets are included.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5: Direct vs Hotel Desk Difference -->
+      <div class="native-faq-card reveal">
+        <button class="native-faq-header" onclick="toggleNativeFaq(this)" aria-expanded="false">
+          <span>Why should we book directly with Thekkady Trips instead of hotel travel desks?</span>
+          <span class="native-faq-icon">+</span>
+        </button>
+        <div class="native-faq-body">
+          <div class="native-faq-content">
+            Hotel desks and street brokers add <strong>30% to 50% middleman commissions</strong> and often crowd strangers into shared vehicles. When you book directly with Thekkady Trips, you get a <strong>guaranteed 100% private 4x4 Jeep</strong> (no strangers), transparent direct rates saving ₹1,500–₹3,000, veteran mountain drivers with 10+ years experience, direct Kumily RFO forest permit coordination, and complete flexibility to pause for photos whenever you wish.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6: What to Wear & Carry -->
+      <div class="native-faq-card reveal">
+        <button class="native-faq-header" onclick="toggleNativeFaq(this)" aria-expanded="false">
+          <span>What should we wear and bring along on an off-road safari?</span>
+          <span class="native-faq-icon">+</span>
+        </button>
+        <div class="native-faq-body">
+          <div class="native-faq-content">
+            Wear comfortable, earthy-toned clothes (greens, khakis, browns — avoid neon colors that startle wild animals). Early morning 5:30 AM safaris are brisk and misty, so carry a <strong>light sweater or jacket</strong>. Bring sunglasses, binoculars, camera gear, and mandatory <strong>original government photo IDs</strong> (Aadhaar, Passport, or Voter ID) for forest checkpost verification. Remember that our vehicles follow a strict zero-plastic forest policy.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════A DAY IN THE DEEP WOODS — GAVI TIMELINE ═══════════════-->
+<section class="section gavi-timeline-section" id="gavi-day-itinerary">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Gavi Insider Chronicle</span>
+      <h2 class="section-title">A Day in the <span class="accent">Deep Woods</span></h2>
+      <p class="section-sub">Hour-by-hour breakdown of what your Gavi Eco-Tourism Safari experience looks like — from pre-dawn Kumily departure to golden-hour return</p>
+    </div>
+
+    <div class="gavi-timeline reveal">
+
+      <div class="timeline-item">
+        <div class="timeline-time">05:30 AM</div>
+        <div class="timeline-dot timeline-dot--gold"></div>
+        <div class="timeline-content">
+          <h4>🌄 Pre-Dawn Departure from Kumily</h4>
+          <p>Your private 4x4 Jeep picks you up at your hotel entrance in the dark cool mist. Light jackets are essential. The road climbs out of town as the sky turns from indigo to deep violet — no other tourists in sight yet.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">06:15 AM</div>
+        <div class="timeline-dot timeline-dot--green"></div>
+        <div class="timeline-content">
+          <h4>🛂 KFDC Forest Checkpost — Permit Verification</h4>
+          <p>Entry at the official Gavi Forest Gate. Our team pre-registers your permits so there's zero delay. Rangers stamp the vehicle logbook. Beyond this point, private civilian cars are strictly forbidden — only licensed KFDC operators enter.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">06:30 – 08:30 AM</div>
+        <div class="timeline-dot timeline-dot--green"></div>
+        <div class="timeline-content">
+          <h4>🐘 Peak Wildlife Window — 80 km Deep Forest Drive</h4>
+          <p>This is the golden hour. Elephant herds graze by the waterways, Indian Gaur bulls patrol ridge clearings, and Nilgiri Langurs watch from canopy branches. Your driver navigates silently — engine off at key wildlife corridors.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">08:30 AM</div>
+        <div class="timeline-dot timeline-dot--amber"></div>
+        <div class="timeline-content">
+          <h4>☕ Hot Breakfast — Gavi Eco-Tourism Camp</h4>
+          <p>A hearty Kerala breakfast is served at the official KFDC camp: hot idly, sambar, coconut chutney and tea/coffee. Eat with the morning mist rising from the reservoir valley — no restaurants or cafés exist in this forest zone.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">09:00 – 11:00 AM</div>
+        <div class="timeline-dot timeline-dot--teal"></div>
+        <div class="timeline-content">
+          <h4>🚣 Gavi Reservoir Boating + Guided Nature Trek</h4>
+          <p>Paddle across the serene Gavi reservoir by boat, watching Painted Storks and Indian Cormorants. Then walk the guided jungle trail with a forest naturalist — spotting spice trees, rare orchids and animal tracks in the undergrowth.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">11:30 AM</div>
+        <div class="timeline-dot timeline-dot--amber"></div>
+        <div class="timeline-content">
+          <h4>🍛 Kerala Lunch — Forest Kitchen</h4>
+          <p>A full Kerala-style meals lunch is included in your KFDC package — rice, sambar, rasam, mixed vegetable curries, pickle and payasam. Vegetarian and non-vegetarian options available. Freshly cooked on forest firewood.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">12:00 – 02:00 PM</div>
+        <div class="timeline-dot timeline-dot--green"></div>
+        <div class="timeline-content">
+          <h4>🏛️ Gavi Forest Museum + Cardamom Estates</h4>
+          <p>Explore the Kerala Forest Department's interpretive museum — flora and fauna exhibits, tiger conservation records, tribal heritage displays. Then walk through working cardamom and pepper estates with your driver as guide.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">02:00 – 04:00 PM</div>
+        <div class="timeline-dot timeline-dot--green"></div>
+        <div class="timeline-content">
+          <h4>🐾 Return Drive — Evening Wildlife Pass</h4>
+          <p>The return journey often yields second wildlife sightings as animals emerge again from midday rest. Your driver knows alternate forest routes for elephant observation. Stop freely for photography — your jeep, your pace.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">04:30 PM</div>
+        <div class="timeline-dot timeline-dot--gold"></div>
+        <div class="timeline-content">
+          <h4>🏠 Return to Kumily — Hotel Drop</h4>
+          <p>Drop-off at your hotel or a preferred point in Kumily. Full debrief with your driver on wildlife sightings and photos. Evening free for Periyar Lake boat cruise or spice market shopping.</p>
+          <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips%2C%20I%20want%20to%20book%20the%20Gavi%20Eco-Tourism%20Safari%20and%20check%20available%20dates." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm timeline-cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            Book This Experience
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.gavi-timeline -->
+  </div>
+</section>
+
+<!-- ═══════════════OUR 4x4 FLEET & SAFETY SPECS ═══════════════-->
+<section class="section fleet-section" id="fleet-specs">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Private Fleet Intelligence</span>
+      <h2 class="section-title">Our 4x4 Fleet & <span class="accent">Safety Specs</span></h2>
+      <p class="section-sub">Purpose-built mountain machines for Idukki's extreme terrain — not converted hotel taxis or shared tourist vans</p>
+    </div>
+
+    <div class="fleet-grid">
+
+      <!-- Vehicle 1: Mahindra Thar -->
+      <div class="fleet-card reveal">
+        <div class="fleet-card__header">
+          <div class="fleet-vehicle-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="8" width="20" height="10" rx="2"/><path d="M5 8V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>
+            </svg>
+          </div>
+          <div class="fleet-card__meta">
+            <h3>Mahindra Thar 4WD</h3>
+            <span class="fleet-badge fleet-badge--primary">Primary Assault Vehicle</span>
+          </div>
+        </div>
+        <p class="fleet-desc">The archetypal Indian off-roader — purpose-engineered for rocky inclines, slippery laterite mud, and jungle clearings that no sedan or SUV can approach. Open-top configuration for unobstructed wildlife photography.</p>
+        <div class="fleet-tech-badges">
+          <span class="fleet-tech">4WD Low Range</span>
+          <span class="fleet-tech">Independent Suspension</span>
+          <span class="fleet-tech">High Ground Clearance</span>
+          <span class="fleet-tech">All-Terrain Tyres</span>
+          <span class="fleet-tech">Roll Cage</span>
+          <span class="fleet-tech">Max 4 Pax</span>
+        </div>
+        <div class="fleet-ideal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Ideal for: Angamoozhy extreme circuit, Sathram highland, custom couples/small groups
+        </div>
+      </div>
+
+      <!-- Vehicle 2: Bolero Camper -->
+      <div class="fleet-card reveal">
+        <div class="fleet-card__header">
+          <div class="fleet-vehicle-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="1" y="9" width="22" height="11" rx="2"/><path d="M4 9V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><circle cx="7" cy="20" r="2"/><circle cx="17" cy="20" r="2"/>
+            </svg>
+          </div>
+          <div class="fleet-card__meta">
+            <h3>Mahindra Bolero Camper 4WD</h3>
+            <span class="fleet-badge fleet-badge--teal">Family & Group Workhorse</span>
+          </div>
+        </div>
+        <p class="fleet-desc">The preferred KFDC safari vehicle — a larger cabin for groups with children or seniors. Rugged diesel 4WD powertrain built for sustained forest trail driving. Bench seating ensures everyone gets equal sightlines on both sides.</p>
+        <div class="fleet-tech-badges">
+          <span class="fleet-tech">4WD Diesel</span>
+          <span class="fleet-tech">Heavy-Duty Leaf Spring</span>
+          <span class="fleet-tech">6-Seater Capacity</span>
+          <span class="fleet-tech">Side-Facing Bench Seats</span>
+          <span class="fleet-tech">Forest-Ready</span>
+          <span class="fleet-tech">KFDC Certified</span>
+        </div>
+        <div class="fleet-ideal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Ideal for: Gavi KFDC eco-tourism, Idukki Dam full-day, Kerala &amp; TN sightseeing
+        </div>
+      </div>
+
+    </div><!-- /.fleet-grid -->
+
+    <div class="fleet-safety-strip reveal">
+      <div class="fleet-safety-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span><strong>First Aid Kit</strong> in every vehicle</span>
+      </div>
+      <div class="fleet-safety-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span><strong>10+ Years</strong> avg driver tenure</span>
+      </div>
+      <div class="fleet-safety-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <span><strong>Licensed &amp; Insured</strong> commercial vehicles</span>
+      </div>
+      <div class="fleet-safety-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span><strong>GPS Tracked</strong> real-time location</span>
+      </div>
+      <div class="fleet-safety-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        <span><strong>Forest Ranger</strong> radio contact active</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════TRANSIT & DISTANCE MATRIX ═══════════════-->
+<section class="section transit-section" id="transit-matrix">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Getting Here</span>
+      <h2 class="section-title">Transit & <span class="accent">Distance Matrix</span></h2>
+      <p class="section-sub">How far is Kumily (Thekkady) from major cities and transit hubs? All distances and approximate travel times to our safari base</p>
+    </div>
+
+    <div class="transit-table-wrap reveal">
+      <table class="transit-table" aria-label="Distance from major cities to Kumily Thekkady">
+        <thead>
+          <tr>
+            <th>Origin City / Hub</th>
+            <th>Distance</th>
+            <th>Road Time</th>
+            <th>Best Mode</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🛫 Kochi Airport (COK)</strong><br><small>Cochin International Airport</small></td>
+            <td><span class="transit-dist">~155 km</span></td>
+            <td>3.5 – 4.5 hrs</td>
+            <td><span class="transit-mode transit-mode--car">Private Car / Taxi</span></td>
+            <td>Nearest major airport. We arrange airport pickup directly — WhatsApp us your flight details.</td>
+          </tr>
+          <tr>
+            <td><strong>🏙️ Munnar Hill Station</strong><br><small>Idukki District, Kerala</small></td>
+            <td><span class="transit-dist">~95 km</span></td>
+            <td>2.5 – 3 hrs</td>
+            <td><span class="transit-mode transit-mode--car">Private Car</span></td>
+            <td>Scenic mountain highway via Rajakkad. Combine both as a 2-night circuit — Munnar + Thekkady.</td>
+          </tr>
+          <tr>
+            <td><strong>🚂 Madurai Railway Station</strong><br><small>Tamil Nadu</small></td>
+            <td><span class="transit-dist">~120 km</span></td>
+            <td>3 – 3.5 hrs</td>
+            <td><span class="transit-mode transit-mode--bus">Bus / Taxi</span></td>
+            <td>Popular route for TN travellers. KSRTC and private buses run Madurai–Kumily. No direct train to Kumily.</td>
+          </tr>
+          <tr>
+            <td><strong>🚢 Alleppey (Alappuzha)</strong><br><small>Houseboat Hub, Kerala</small></td>
+            <td><span class="transit-dist">~155 km</span></td>
+            <td>4 – 5 hrs</td>
+            <td><span class="transit-mode transit-mode--car">Private Car</span></td>
+            <td>Classic Kerala combo — Alleppey houseboat + Thekkady safari. We coordinate both bookings.</td>
+          </tr>
+          <tr>
+            <td><strong>🌴 Trivandrum (TRV)</strong><br><small>Thiruvananthapuram, Kerala</small></td>
+            <td><span class="transit-dist">~205 km</span></td>
+            <td>4.5 – 5.5 hrs</td>
+            <td><span class="transit-mode transit-mode--bus">Bus / Taxi</span></td>
+            <td>KSRTC Superfast or private cab. 5 hrs drive via Kottayam. Madurai TRV–Kumily night buses available.</td>
+          </tr>
+          <tr>
+            <td><strong>🏙️ Bangalore (BLR)</strong><br><small>Karnataka</small></td>
+            <td><span class="transit-dist">~480 km</span></td>
+            <td>8 – 10 hrs</td>
+            <td><span class="transit-mode transit-mode--bus">Overnight Bus</span></td>
+            <td>KSRTC / private overnight sleeper buses from Bengaluru. Arrive fresh at Kumily morning.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="transit-note reveal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p><strong>Nearest railway stations:</strong> Kottayam (~115 km) and Ernakulam (~130 km). <strong>Kumily Bus Stand</strong> has direct KSRTC connections to Kochi, Madurai, Coimbatore, Kollam, Kottayam and Ernakulam daily. We offer hotel/bus-stand pickup for all guests — mention your arrival point on WhatsApp.</p>
     </div>
 
   </div>
@@ -1729,9 +2541,13 @@
       </div>
 
       <div class="footer-links-col">
-        <h4>Legal & Terms</h4>
+        <h4>Planning &amp; Intel</h4>
         <ul>
-          <li><a href="#safari-calculator">Safari Cost Calculator</a></li>
+          <li><a href="#safari-comparison">Circuit Comparison Matrix</a></li>
+          <li><a href="#safari-calculator">Instant Cost Calculator</a></li>
+          <li><a href="#wildlife-dossier">Wildlife Intelligence</a></li>
+          <li><a href="#transparency">Direct Fleet vs. Brokers</a></li>
+          <li><a href="#safari-faq">Safari FAQs</a></li>
           <li><a href="#" onclick="openModal(event, 'privacyModal')">Privacy Policy</a></li>
           <li><a href="#" onclick="openModal(event, 'termsModal')">Cancellation Terms</a></li>
         </ul>
@@ -1877,6 +2693,18 @@
 
 <!-- Toast Notification -->
 <div class="toast" id="toast"><span class="toast-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><span class="toast-msg" id="toastMsg"></span></div>
+
+<!-- ═══════════════MOBILE STICKY BOTTOM ACTION BAR (phones only) ═══════════════-->
+<div class="mobile-sticky-bar" id="mobileStickyBar">
+  <a href="tel:+917558876257" class="msb-call" aria-label="Call Thekkady Trips">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a href="https://wa.me/917558876257?text=Hi%20Thekkady%20Trips!%20I%20want%20to%20book%20a%20Safari.%20Please%20share%20availability%20and%20rates." target="_blank" rel="noopener" class="msb-whatsapp" aria-label="Book on WhatsApp">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    Book on WhatsApp — Instant Reply
+  </a>
+</div>
 
 <script src="./script.js" defer></script>
 

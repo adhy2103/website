@@ -508,6 +508,23 @@ function toggleDetailFaq(button) {
   }
 }
 
+function toggleNativeFaq(btn) {
+  const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+  const body = btn.nextElementSibling;
+  const icon = btn.querySelector('.native-faq-icon');
+
+  btn.setAttribute('aria-expanded', !isExpanded);
+  if (!isExpanded) {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    body.style.opacity = '1';
+    if (icon) icon.style.transform = 'rotate(45deg)';
+  } else {
+    body.style.maxHeight = '0px';
+    body.style.opacity = '0';
+    if (icon) icon.style.transform = 'rotate(0deg)';
+  }
+}
+
 /* ─── 3D SPATIAL TILT INTERACTION (DESKTOP ONLY) ─────────── */
 function initSpatialTilt() {
   // Only activate on devices with a fine pointer/mouse hover capability
@@ -584,11 +601,66 @@ function initApp() {
   });
 }
 
+
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);
 } else {
   initApp();
 }
+
+/* ── Animated Number Counter ── */
+(function () {
+  const counterEls = document.querySelectorAll('.counter-val');
+  if (!counterEls.length) return;
+
+  // Respect prefers-reduced-motion
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animateCounter(el) {
+    const target    = parseFloat(el.dataset.count);
+    const suffix    = el.dataset.suffix || '';
+    const decimals  = parseInt(el.dataset.decimals || '0', 10);
+    const duration  = 1800;
+    const start     = performance.now();
+
+    if (prefersReduced) { el.textContent = target.toFixed(decimals) + suffix; return; }
+
+    function step(now) {
+      const elapsed  = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current  = target * eased;
+      el.textContent = current.toFixed(decimals) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const counterObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && !entry.target.dataset.counted) {
+        entry.target.dataset.counted = 'true';
+        animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counterEls.forEach(function (el) { counterObs.observe(el); });
+})();
+
+/* ── Reveal new sections via IntersectionObserver ── */
+(function () {
+  const newRevealEls = document.querySelectorAll(
+    '.gavi-timeline-section .reveal, .fleet-section .reveal, .transit-section .reveal, .gavi-timeline'
+  );
+  if (!newRevealEls.length) return;
+  const obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  newRevealEls.forEach(function (el) { obs.observe(el); });
+})();
 
 console.log('%c Thekkady Trips — Spatial Bento Grid & 3D Glass UI Initialized!', 'color: #C59B42; font-size: 15px; font-weight: bold;');
 
